@@ -1,6 +1,7 @@
 {
   "name": "aloba-fe",
   "version": "0.1.0",
+  "homepage": "https://aloba-web.github.io/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -16,10 +17,14 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0-next.98",
+    "react-slick": "^0.27.13",
+    "slick-carousel": "^1.8.1",
     "typescript": "^4.1.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -42,5 +47,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-slick": "^0.23.4",
+    "gh-pages": "^3.1.0"
   }
 }
