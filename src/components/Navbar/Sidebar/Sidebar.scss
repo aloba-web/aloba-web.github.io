@@ -1,0 +1,68 @@
+@import "../../../variables.scss";
+
+.sidebar-container {
+  display: flex;
+  justify-content: flex-end;
+  transition: 0.5s;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  right: -100vw;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .sidebar {
+    background-color: $classic-blue;
+    width: 75vw;
+    padding-left: $side-margin;
+    padding-right: $side-margin;
+
+    .sidebar-navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+      margin-bottom: 16px;
+
+      .sidebar-close {
+        background: none;
+        color: white;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+      }
+    }
+
+    .sidebar-menu-items {
+      display: flex;
+      flex-direction: column;
+      margin-top: 64px;
+
+      a {
+        color: white;
+        height: 40px;
+        text-decoration: none;
+      }
+    }
+
+    .social-media {
+      margin-top: 40px;
+
+      a:first-child {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &.open {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar-container .sidebar {
+    width: 100vw;
+  }
+}

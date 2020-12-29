@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Hamburger.scss";
 
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
-  const toggleState = () => {
-    setOpen(!open);
-  }
+export interface HamburgerProps {
+  open: boolean;
+  toggleState: () => void;
+}
 
+const Navbar: React.FC<HamburgerProps> = ({ open, toggleState }) => {
   return (
-    <div className={`container ${open ? 'open' : ''}`} onClick={toggleState}>
+    <div
+      className={`hamburger-container ${open ? "" : ""}`}
+      onClick={toggleState}
+    >
       <div className="bar1"></div>
       <div className="bar2"></div>
       <div className="bar3"></div>

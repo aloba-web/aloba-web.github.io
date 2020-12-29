@@ -1,2 +1,9 @@
+@import "../../variables.scss";
+
 .navbar {
+  align-items: center;
+  background-color: $classic-blue;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px $side-margin;
 }
