@@ -1,5 +1,9 @@
 .carousel {
+  height: 500px;
   .slick-dots {
       position: unset;
   }
+  .slick-slide {
+    height: 500px;
+ }
 }
