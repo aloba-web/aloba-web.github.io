@@ -6,7 +6,7 @@ export interface HamburgerProps {
   toggleState: () => void;
 }
 
-const Navbar: React.FC<HamburgerProps> = ({ open, toggleState }) => {
+const Hamburger: React.FC<HamburgerProps> = ({ open, toggleState }) => {
   return (
     <div
       className={`hamburger-container ${open ? "" : ""}`}
@@ -19,4 +19,4 @@ const Navbar: React.FC<HamburgerProps> = ({ open, toggleState }) => {
   );
 };
 
-export default Navbar;
+export default Hamburger;

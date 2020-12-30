@@ -1,3 +1,44 @@
+@import "../../variables.scss";
+
 .home {
-  
+  img.image-divider {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .container {
+    margin: auto;
+    max-width: 600px;
+  }
+
+  .products {
+    padding: $side-margin;
+
+    h2 {
+      font-weight: 500;
+    }
+  }
+
+  .what {
+    padding: $side-margin;
+    text-align: center;
+
+    h2 {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    span {
+      font-size: 32px;
+    }
+  }
+
+  .simply-smashing {
+    display: flex;
+    margin: 64px auto;
+  }
 }

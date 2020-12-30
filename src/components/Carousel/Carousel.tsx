@@ -12,7 +12,7 @@ const carouselItems: Array<{ backgroundImage: string; text: string }> = [
       "Viste du att alger i våra hav binder lika mycket koldioxid som alla världens träd?",
   },
   {
-    backgroundImage: "",
+    backgroundImage: tempImage,
     text:
       "Helo",
   },
