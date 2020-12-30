@@ -1,13 +1,27 @@
 .carousel {
-  height: 500px;
+  .carousel-item {
+    color: white;
+    font-size: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+
+    span {
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      width: 75%;
+      text-align: center;
+      transform: translateX(-50%);
+    }
+  }
+
   .slick-dots {
     bottom: 25px;
 
     li button:before {
       color: white;
     }
-  }
-  .slick-slide {
-    height: 500px;
   }
 }

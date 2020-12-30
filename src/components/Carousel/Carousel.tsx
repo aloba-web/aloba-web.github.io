@@ -5,8 +5,22 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.scss";
 import tempImage from "../../assets/temp.jpeg";
 
+const carouselItems: Array<{ backgroundImage: string; text: string }> = [
+  {
+    backgroundImage: tempImage,
+    text:
+      "Viste du att alger i våra hav binder lika mycket koldioxid som alla världens träd?",
+  },
+  {
+    backgroundImage: "",
+    text:
+      "Helo",
+  },
+];
+
 const Carousel = () => {
   var settings = {
+    autoplay: true,
     arrows: false,
     dots: true,
     infinite: true,
@@ -16,15 +30,16 @@ const Carousel = () => {
   };
   return (
     <Slider className="carousel" {...settings}>
-      <div>
-        <img src={tempImage} alt="" />
-      </div>
-      <div>
-        <h3>2</h3>
-      </div>
-      <div>
-        <h3>3</h3>
-      </div>
+      {carouselItems.map((item) => (
+        <div>
+          <div
+            className="carousel-item"
+            style={{ backgroundImage: `url(${item.backgroundImage})` }}
+          >
+            <span>{item.text}</span>
+          </div>
+        </div>
+      ))}
     </Slider>
   );
 };
