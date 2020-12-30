@@ -1,0 +1,41 @@
+@import "../../variables.scss";
+
+.footer-container {
+  background-color: $light-grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: $side-margin * 2 $side-margin;
+
+  .footer-left,
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 8px;
+
+    & > *:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  .footer-right {
+    align-items: flex-end;
+  }
+
+  .social-media-icons a:first-child {
+    margin-right: 8px;
+  }
+
+  .social-media-attr {
+    text-align: right;
+
+    span:last-child {
+      margin-left: 8px;
+    }
+
+    & > span {
+      display: inline-block;
+    }
+  }
+}

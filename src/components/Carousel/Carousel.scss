@@ -1,9 +1,13 @@
 .carousel {
   height: 500px;
   .slick-dots {
-      position: unset;
+    bottom: 25px;
+
+    li button:before {
+      color: white;
+    }
   }
   .slick-slide {
     height: 500px;
- }
+  }
 }
