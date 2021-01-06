@@ -19,13 +19,12 @@
     }
   }
 
-  .what {
+  .what,
+  .story {
     padding: $side-margin;
-    text-align: center;
 
     h2 {
-      font-size: 16px;
-      font-weight: 400;
+      font-weight: 500;
     }
 
     p {
@@ -37,7 +36,15 @@
     }
   }
 
-  .simply-smashing {
+  .what {
+    text-align: center;
+
+    h2 {
+      font-size: 16px;
+    }
+  }
+
+  .icon-divider {
     display: flex;
     margin: 64px auto;
   }

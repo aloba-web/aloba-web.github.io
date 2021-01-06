@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.scss";
-import tempImage from "../../assets/temp.jpeg";
+import tempImage from "../../../assets/temp.jpeg";
 
 const carouselItems: Array<{ backgroundImage: string; text: string }> = [
   {
@@ -18,7 +18,7 @@ const carouselItems: Array<{ backgroundImage: string; text: string }> = [
   },
 ];
 
-const Carousel = () => {
+const Carousel: React.FC = () => {
   var settings = {
     autoplay: true,
     arrows: false,
@@ -30,8 +30,8 @@ const Carousel = () => {
   };
   return (
     <Slider className="carousel" {...settings}>
-      {carouselItems.map((item) => (
-        <div>
+      {carouselItems.map((item, index) => (
+        <div key={index}>
           <div
             className="carousel-item"
             style={{ backgroundImage: `url(${item.backgroundImage})` }}

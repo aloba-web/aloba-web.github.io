@@ -3,16 +3,18 @@ import "./Card.scss";
 
 export interface CardProps {
   img: string;
-  text: string;
+  text?: string;
+  title?: string;
   alt: string;
 }
 
-const Card: React.FC<CardProps> = ({ img, text, alt }) => {
+const Card: React.FC<CardProps> = ({ img, title, text, alt }) => {
   return (
     <div className="card-container">
       <img src={img} alt={alt} />
       <div className="text-container">
-        <h3>{text}</h3>
+        <h3>{title}</h3>
+        <p>{text}</p>
       </div>
     </div>
   );

@@ -1,0 +1,30 @@
+@import "../../../variables.scss";
+
+.recipe-carousel {
+  .carousel-item > * {
+    margin: 16px;
+  }
+
+  .slick-prev, .slick-next {
+    &::before {
+      color: $classic-blue;
+    }
+  }
+
+  // Move arrows on top of images
+  .slick-prev {
+    left: 22px;
+    z-index: 1;
+  }
+  .slick-next {
+    right: 22px;
+  }
+
+  .slick-dots {
+    bottom: 25px;
+
+    li button:before {
+      color: white;
+    }
+  }
+}

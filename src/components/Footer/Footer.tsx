@@ -18,8 +18,8 @@ const Footer: React.FC<FooterProps> = () => {
   return (
     <div className="footer-container">
       <div className="footer-left">
-        {links.map((link) => (
-          <Link to={link.path}>{link.label}</Link>
+        {links.map((link, index) => (
+          <Link key={index} to={link.path}>{link.label}</Link>
         ))}
       </div>
       <div className="footer-right">
