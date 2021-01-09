@@ -3,9 +3,9 @@ import "./Card.scss";
 
 export interface CardProps {
   img: string;
+  alt: string;
   text?: string;
   title?: string;
-  alt: string;
 }
 
 const Card: React.FC<CardProps> = ({ img, title, text, alt }) => {

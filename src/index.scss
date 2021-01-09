@@ -1,21 +1,36 @@
 @import "./variables.scss";
 
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Poppins"),
+    url(./assets/fonts/Poppins/Poppins-Bold.ttf) format("truetype");
+}
+
 body {
   color: $classic-blue;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  a { 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     color: $classic-blue;
+    font-family: "Poppins", "Helvetica Neue", sans-serif;
+  }
+
+  a,
+  p {
     text-decoration: none;
   }
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

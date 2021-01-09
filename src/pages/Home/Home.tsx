@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.scss";
-import { CarouselIntro, CarouselRecept } from "../../components/Carousels";
+import { CarouselIntro, CarouselRecipe } from "../../components/Carousels";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import tempImage from "../../assets/temp.jpeg";
@@ -35,10 +35,6 @@ const Story: React.FC = () => (
   </div>
 );
 
-// const Recept: React.FC = () => (
-//   <Carousel />
-// );
-
 const Home = () => {
   return (
     <div className="home">
@@ -55,7 +51,7 @@ const Home = () => {
         <img className="image-divider" src={tempImage} alt="divider" />
         <Story />
         <img className="image-divider" src={tempImage} alt="divider" />
-        <CarouselRecept />
+        <CarouselRecipe />
         <Leaf className="icon-divider" />
       </div>
       <Footer />

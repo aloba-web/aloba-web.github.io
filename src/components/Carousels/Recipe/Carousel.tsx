@@ -1,47 +1,44 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.scss";
-import tempImage from "../../../assets/temp.jpeg";
 import Card from "../../Card";
-
-const carouselItems: Array<{ image: string; text: string; title: string }> = [
-  {
-    image: tempImage,
-    title: "Receptet",
-    text:
-      "Viste du att alger i våra hav binder",
-  },
-  {
-    image: tempImage,
-    text: "Helo där",
-    title: "Receptet 2",
-  },
-];
+import { recipes } from "../../../pages/Recipes/recipesMock";
 
 const Carousel: React.FC = () => {
-  var settings = {
+  let dragging = false;
+  const settings = {
     autoplay: false,
     arrows: true,
+    afterChange: () => (dragging = false),
+    beforeChange: () => (dragging = true),
     centerMode: true,
-    centerPadding: '32px',
+    centerPadding: "32px",
     dots: false,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+  const history = useHistory();
+  const onSlideClick = (path: string) => {
+    history.push(path);
+  };
+
   return (
     <Slider className="recipe-carousel" {...settings}>
-      {carouselItems.map((item, index) => (
-        <div className="carousel-item">
+      {recipes.map((recipe) => (
+        <button
+          className="carousel-item"
+          onClick={() => !dragging && onSlideClick(`/recipe/${recipe.id}`)}
+        >
           <Card
-            key={index}
-            img={item.image}
+            key={recipe.id}
+            img={recipe.image}
             alt="food-dish"
-            text={item.text}
-            title={item.title}
+            title={recipe.title}
           />
-        </div>
+        </button>
       ))}
     </Slider>
   );

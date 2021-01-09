@@ -1,11 +1,19 @@
 @import "../../../variables.scss";
 
 .recipe-carousel {
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+  }
+
   .carousel-item > * {
     margin: 16px;
   }
 
-  .slick-prev, .slick-next {
+  .slick-prev,
+  .slick-next {
     &::before {
       color: $classic-blue;
     }
