@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.daf32976.chunk.css",
-    "main.js": "/static/js/main.2c25045d.chunk.js",
-    "main.js.map": "/static/js/main.2c25045d.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.cf2c0654.js",
-    "runtime-main.js.map": "/static/js/runtime-main.cf2c0654.js.map",
+    "main.css": "/static/css/main.4bfe1efa.chunk.css",
+    "main.js": "/static/js/main.84bea13c.chunk.js",
+    "main.js.map": "/static/js/main.84bea13c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ab2e95c2.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ab2e95c2.js.map",
     "static/css/2.165ff965.chunk.css": "/static/css/2.165ff965.chunk.css",
-    "static/js/2.c6390127.chunk.js": "/static/js/2.c6390127.chunk.js",
-    "static/js/2.c6390127.chunk.js.map": "/static/js/2.c6390127.chunk.js.map",
-    "static/js/3.2b3a54e4.chunk.js": "/static/js/3.2b3a54e4.chunk.js",
-    "static/js/3.2b3a54e4.chunk.js.map": "/static/js/3.2b3a54e4.chunk.js.map",
+    "static/js/2.7858c023.chunk.js": "/static/js/2.7858c023.chunk.js",
+    "static/js/2.7858c023.chunk.js.map": "/static/js/2.7858c023.chunk.js.map",
+    "static/js/3.4448cee2.chunk.js": "/static/js/3.4448cee2.chunk.js",
+    "static/js/3.4448cee2.chunk.js.map": "/static/js/3.4448cee2.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.165ff965.chunk.css.map": "/static/css/2.165ff965.chunk.css.map",
-    "static/css/main.daf32976.chunk.css.map": "/static/css/main.daf32976.chunk.css.map",
-    "static/js/2.c6390127.chunk.js.LICENSE.txt": "/static/js/2.c6390127.chunk.js.LICENSE.txt",
+    "static/css/main.4bfe1efa.chunk.css.map": "/static/css/main.4bfe1efa.chunk.css.map",
+    "static/js/2.7858c023.chunk.js.LICENSE.txt": "/static/js/2.7858c023.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/static/media/Poppins-Bold.404e299b.ttf",
     "static/media/aloba-logo-negative.b7d12cdd.svg": "/static/media/aloba-logo-negative.b7d12cdd.svg",
     "static/media/aloba.2a7963c1.svg": "/static/media/aloba.2a7963c1.svg",
     "static/media/close.305eda52.svg": "/static/media/close.305eda52.svg",
@@ -27,10 +28,10 @@
     "static/media/temp.859edfda.jpeg": "/static/media/temp.859edfda.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.cf2c0654.js",
+    "static/js/runtime-main.ab2e95c2.js",
     "static/css/2.165ff965.chunk.css",
-    "static/js/2.c6390127.chunk.js",
-    "static/css/main.daf32976.chunk.css",
-    "static/js/main.2c25045d.chunk.js"
+    "static/js/2.7858c023.chunk.js",
+    "static/css/main.4bfe1efa.chunk.css",
+    "static/js/main.84bea13c.chunk.js"
   ]
 }
