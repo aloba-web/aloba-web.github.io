@@ -1,7 +1,7 @@
 {
   "name": "aloba-fe",
   "version": "0.1.0",
-  "homepage": "https://aloba-web.github.io/",
+  "homepage": "https://alobafoods.com/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
