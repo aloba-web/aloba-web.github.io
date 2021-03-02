@@ -3,9 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.scss";
-import Hero from "../../../assets/aloba-hero.jpg";
-import Ocean from "../../../assets/ocean.jpg";
-import Land from "../../../assets/land.jpg";
+import Hero from "../../../assets/aloba-hero-min.jpg";
+import Ocean from "../../../assets/ocean-min.jpg";
+import Land from "../../../assets/land-min.jpg";
 
 const carouselItems: Array<{ backgroundImage: string; text: string }> = [
   {

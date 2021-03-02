@@ -14,6 +14,7 @@ body {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1rem;
 
   h1,
   h2,
@@ -26,6 +27,7 @@ body {
 
   a,
   p {
+    color: $classic-blue;
     text-decoration: none;
   }
 }
@@ -33,4 +35,16 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  height: auto !important;
+
+  div {
+    height: 100%;
+  }
 }

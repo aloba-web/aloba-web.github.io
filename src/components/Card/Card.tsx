@@ -11,10 +11,11 @@ export interface CardProps {
 const Card: React.FC<CardProps> = ({ img, title, text, alt }) => {
   return (
     <div className="card-container">
-      <img src={img} alt={alt} />
+      <div className="image" style={{ backgroundImage: `url(${img})` }}></div>
+      {/* <img src={img} alt={alt} /> */}
       <div className="text-container">
         <h3>{title}</h3>
-        <p>{text}</p>
+        {text && <p>{text}</p>}
       </div>
     </div>
   );

@@ -1,34 +1,31 @@
 import React from "react";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import FoodTruck from "../../assets/food-truck.jpg";
+import FoodTruck from "../../assets/food-truck-min.jpg";
 import "./About.scss";
-
-export interface RecipeObj {
-  id: string;
-  image: string;
-  ingredients: Array<string>;
-  ingress: string;
-  steps: Array<string>;
-  title: string;
-}
 
 const About: React.FC = () => {
   return (
     <div className="about">
       <Navbar />
-        <img className="image-divider" src={FoodTruck} alt="divider" />
+      <img className="image-divider" src={FoodTruck} alt="divider" />
       <div className="container">
         <p>
-          Välsmakande, enkelt att tillaga och god konsistens – självklart. Men
-          vi  är också besjälade av hälsa. Därför har valt råvaror med omsorg
-          och som  har goda egenskaper. I den blå regnskogen, i havet utanför
-          Trondheim,  odlar och skördar vi Saccharina latissima, en alg som ofta
-          kallas  sockertång. Den är laddad med allt från mineraler och
-          vitaminer till  omega-3 och jod. Tillsammans med rotfrukter, korn,
-          quinoa, kikärtor samt  inte minst havre med sina superfibrer,
-          betaglukanerna, har vi utvecklat  ett nytt plantbaserat matkoncept –
-          Aloba.
+          Vi är en spridd skara av entreprenörer och forskare som brinner för
+          matinnovation. Vi har en bakgrund och erfarenhet från bland annat
+          Oatly, Mat.se, Santa Maria och algodling i Norge. Hållbart och
+          hälsosamt, plantbaserade nordiska råvaror från hav och land – och
+          framförallt en matupplevelse utöver det vanliga. Det var ledorden när
+          vi började att utveckla Aloba i slutet av 2019. I ett litet kök strax
+          utanför Båstad skred vi till verket och började utveckla, provsmaka
+          och testa – nya recept, nya ingredienser och nya kombinationer. Om och
+          om igen. Nu, många tester och provsmakningar senare är vi nöjda och
+          det är dags för Aloba att möta en bredare publik. Nyfiken på namnet
+          Aloba? Bland ingredienserna hittar du alger (sockertång), havre och
+          korn som också är grunden till namnet på konceptet; från
+          engelskans algae-oats-barley – Aloba! Aloba tillagas i Sverige,
+          närmare bestämt i Skåne. Bakom varumärket Aloba® står det nybildade
+          bolaget Aloba Foods AB, med bas på Ideon i Lund.
         </p>
       </div>
       <Footer />

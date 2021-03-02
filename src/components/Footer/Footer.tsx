@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = () => {
           >
             <InstagramLogoNegative />
           </a>
-          <a target="_blank" rel="noreferrer" href="">
+          <a target="_blank" rel="noreferrer" href="https://www.facebook.com/alobafoods">
             <FacebookLogoNegative />
           </a>
         </div>

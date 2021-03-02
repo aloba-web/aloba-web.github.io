@@ -17,8 +17,17 @@ const Carousel: React.FC = () => {
     centerMode: true,
     centerPadding: "32px",
     dots: false,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   const history = useHistory();
   const onSlideClick = (path: string) => {

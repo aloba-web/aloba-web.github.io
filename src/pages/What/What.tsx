@@ -1,23 +1,14 @@
 import React from "react";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import Salad from "../../assets/salad.jpeg";
+import Salad from "../../assets/salad-min.jpeg";
 import "./What.scss";
-
-export interface RecipeObj {
-  id: string;
-  image: string;
-  ingredients: Array<string>;
-  ingress: string;
-  steps: Array<string>;
-  title: string;
-}
 
 const What: React.FC = () => {
   return (
     <div className="what">
       <Navbar />
-        <img className="image-divider" src={Salad} alt="divider" />
+      <img className="image-divider" src={Salad} alt="divider" />
       <div className="container">
         <p>
           Välsmakande, enkelt att tillaga och god konsistens – självklart. Men

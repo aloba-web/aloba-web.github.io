@@ -1,9 +1,10 @@
 @import "../../variables.scss";
 
 .recipes {
+  margin-bottom: $side-margin;
   .head {
     text-align: center;
-    margin: $side-margin;
+    padding: $side-margin;
 
     h1 {
       margin-top: 0;

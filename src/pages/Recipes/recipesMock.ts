@@ -1,52 +1,175 @@
-import tempImage from "../../assets/temp.jpeg";
+import BahnMi from "../../assets/recipes/bahn-mi.jpg";
+import Sesam from "../../assets/recipes/sesam.jpg";
+import Soppa from "../../assets/recipes/soppa.jpg";
+import Spaghetti from "../../assets/recipes/spaghetti.jpg";
+import Tacos from "../../assets/recipes/tacos.jpg";
+import WinterGarden from "../../assets/recipes/winter-garden.jpg";
+import { RecipeObj } from "../Recipe/Recipe";
 
-export const recipes = [
+export const recipes: Array<RecipeObj> = [
   {
-    "id": "1",
-    "image": tempImage,
-    "title": "Bananbröd",
-    "ingress": "Detta är ett gott bröd",
-    "ingredients": ["2 Bananer", "3 Ägg", "Lite mjöl"],
-    "steps": ["Blanda ihop ingredienserna", "Tryck in det i ugnen", "Färdig"]
+    id: "1",
+    image: BahnMi,
+    title: "Bahn Mi",
+    ingress:
+      "När olika smakvärldar möts och skapar nya ljuvliga nivåer - det är fint det. En liten del Frankrike, en liten del Vietnam och en stor del Aloba. Här är  det mycket smak som skall få plats i varje tugga så viktigt att använda mjukt bröd utan hård skorpa (så att man kan ta ordentliga bett)",
+    ingredients: [
+      "4 Alobaburgare",
+      "en bit ingefära",
+      "4 klyfta vitlök",
+      "1 msk soja",
+      "en nypa socker",
+      "4 baguetter (mjuk skorpa)",
+      "4 salladsblad",
+      "en knippe koriander",
+      "en knippe salladslök",
+      "sesamfrön",
+    ],
+    steps: [
+      "Gör så härLägg in lök och gurka. Blanda samman srirachamajonäs.",
+      "Lägg gärna salladsbladen i iskallt vatten så att de blir riktigt krispiga.",
+      "Skär salladslök i fina skivor och grovhacka koriander.",
+      "Krossa vitlöksklyftor (använd sidan på en kniv och tryck till) och grovhacka ingefära. Skär burgaren i bitar. Hetta upp en panna med olja och stek bitarna tillsammans med vitlök och ingefära.",
+      "Strö över lite socker och soja.",
+      "Montera ihop baguetter så att man får med så mycket som möjligt i varje tugga.",
+    ],
   },
   {
-    "id": "2",
-    "image": tempImage,
-    "title": "Bananbröd 2",
-    "ingress": "Detta är ett gott bröd",
-    "ingredients": ["2 Bananer", "3 Ägg", "Lite mjöl"],
-    "steps": ["Blanda ihop ingredienserna", "Tryck in det i ugnen", "Färdig"]
+    id: "2",
+    image: Sesam,
+    title: "Sesamstekt Aloba med shiitake & glasnudlar",
+    ingress: "Snabbt, gott, enkelt & smakrikt!",
+    ingredients: [
+      "4 port glasnudlar",
+      "300 g Alobafärs",
+      "200 g shiitakesvamp (eller annan svamp)",
+      "1 gul lök",
+      "2-3 klyftor vitlök",
+      "en knippe salladslök",
+      "2 msk sesamfrön, gärna vita och svarta",
+      "1 msk sesamolja",
+      "1 msk soja",
+      "olja, salt & peppar",
+      "1.5 dl majonäs",
+      "1 msk misopasta",
+    ],
+    steps: [
+      "Tillaga glasnudlarna enligt anvisningarna på förpackningen.",
+      "Rosta sesamfrön i en het panna. Rör hela tiden så att de inte bränner. Skiva salladslök tunt, lägg undan hälften till serveringen.",
+      "Skala och hacka ner gullök och vitlök. Skiva ner svamp.",
+      "Fräs lök och svamp i olja i en panna. Addera färs och stek några minuter till.",
+      "Blanda ner glasnudlar, soja och smaka av med salt & peppar.",
+      "Strö över sesamfrön, salladslök och ringla över lite sesamolja. Servera med en klick misomajo och gärna en sallad.",
+      "Blanda samman majonäsen och misopastan till en sås.",
+    ],
   },
   {
-    "id": "3",
-    "image": tempImage,
-    "title": "Bananbröd 3",
-    "ingress": "Detta är ett gott bröd",
-    "ingredients": ["2 Bananer", "3 Ägg", "Lite mjöl"],
-    "steps": ["Blanda ihop ingredienserna", "Tryck in det i ugnen", "Färdig"]
+    id: "3",
+    image: Soppa,
+    title: "Jordärtskockssoppa med smörstekt Aloba",
+    ingress:
+      "En len, syrlig soppa som bryts av gott med smörstekt alobaburgare.",
+    ingredients: [
+      "500g jordärtsskocka, skalad (fryst funkar fint)",
+      "2 potatisar",
+      "1 gul lök",
+      "8 dl vatten",
+      "2 dl grädde",
+      "1 grönsaksbuljong",
+      "en nypa timjan",
+      "olja & smör",
+      "flingsalt & nymalen svartpeppar",
+      "2 st Alobaburgare",
+      "2 msk hackad persilja (fryst funkar fint)",
+      "1 klick smör",
+      "salt & peppar",
+    ],
+    steps: [
+      "Skala eller tina jordärtskockor.",
+      "Skala och hacka lök och potatis. Fräs allt i olja i en stor kastrull.",
+      "Tillsätt vatten, buljong, grädde och låt puttra under lock i 20 minuter.",
+      "Mixa soppan slät med en stavmixer. Smaka av med salt, peppar och timjan. Späd med vatten till önskad konsistens.",
+      "Skär burgaren i bitar. Hetta upp en klick smör i en panna. Stek bitarna. Strö över persilja, salt & peppar och stek lite till. Ställ pannan åt sidan.",
+    ],
   },
   {
-    "id": "4",
-    "image": tempImage,
-    "title": "Bananbröd 4",
-    "ingress": "Detta är ett gott bröd",
-    "ingredients": ["2 Bananer", "3 Ägg", "Lite mjöl"],
-    "steps": ["Blanda ihop ingredienserna", "Tryck in det i ugnen", "Färdig"]
+    id: "4",
+    image: Spaghetti,
+    title: "Spagetti Bolognese",
+    ingress:
+      "Gör gärna storkok Bolognese. För att det är så trevligt när storkok puttrar på spisen, för att det blir ännu godare när det det puttrar länge och för att det är grymt att ha i frysen.",
+    ingredients: [
+      "400 g Alobafärs",
+      "1 tetra krossade tomater, ca 400g",
+      "1 morot",
+      "1 blekselleri",
+      "1 gul lök",
+      "2 klyftor vitlök",
+      "1 dl rött vin + 1 glas till kocken",
+      "1 msk tomatpuré",
+      "en knippe oregano",
+      "olja, salt & peppar",
+      "spagetti",
+      "parmesan",
+      "ärtskott",
+    ],
+    steps: [
+      "Skala och finhacka lök och vitlök. Skölj och hacka sellerin fint. Skala och riv morot.",
+      "Värm olja i en stekpanna och fräs färs, lök, vitlök och oregano några minuter.",
+      "Blanda ner tomatpuré, krossade tomater, morot, selleri och vin.",
+      "Koka upp och låt sjuda under lock 20- 30 minuter. Smaka av med salt och peppar.",
+      "Koka pastan al dente. Häll av den men spara lite av pastavattnet i en kopp.",
+      "Häll ihop pastan med såsen så att den suger upp all god smak.",
+      "Känns det som att den stabbar till sig så addera lite av det varma kokvattnet.",
+      "Hyvla över parmesanost och servera med ärtskott.",
+    ],
   },
   {
-    "id": "5",
-    "image": tempImage,
-    "title": "Bananbröd 5",
-    "ingress": "Detta är ett gott bröd",
-    "ingredients": ["2 Bananer", "3 Ägg", "Lite mjöl"],
-    "steps": ["Blanda ihop ingredienserna", "Tryck in det i ugnen", "Färdig"]
+    id: "5",
+    image: Tacos,
+    title: "Tacos",
+    ingress:
+      "Denna trevliga plockstund kring matbordet där det finns något för alla.",
+    ingredients: [
+      "Alobafärs",
+      "Tortilla",
+      "Salsa",
+      "Gul lök",
+      "Vitlök",
+      "Grönsaker",
+      "Jalapeño",
+      "koriander",
+      "Inlagd rödlök",
+    ],
+    steps: [
+      "Skala och hacka gul lök och vitlök.",
+      "Fräs i olja i en panna tillsammans med färsen eller burgarna i några minuter.",
+      "Strö över tacokrydda och fräs under omrörning.",
+      "Smaka av med salt, peppar och mer tacokrydda. Vill man ha den aningen krämig så späd med lite vatten.",
+      "Skölj och haka upp grönsakerna.  ",
+    ],
   },
   {
-    "id": "6",
-    "image": tempImage,
-    "title": "Bananbröd 6",
-    "ingress": "Detta är ett gott bröd",
-    "ingredients": ["2 Bananer", "3 Ägg", "Lite mjöl"],
-    "steps": ["Blanda ihop ingredienserna", "Tryck in det i ugnen", "Färdig"]
-  }
-]
+    id: "6",
+    image: WinterGarden,
+    title: "Vinterträdgården",
+    ingress: "Smörstekt Aloba med brysselkål, fikon  & ingefära",
+    ingredients: [
+      "500 g brysselkål",
+      "3 st Alobaburgare",
+      "10 torkade fikon",
+      "1 näve nötter",
+      "en bit ingefära",
+      "2-3 klyfta vitlök",
+      "1-2 msk sirap",
+      "1 stor klick smör",
+      "flingsalt & peppar",
+    ],
+    steps: [
+      "Skölj brysselkålen och skär av roten. Skiva kålen grovt, i ca 3–4 bitar per kålhuvud.Krossa ingefära och vitlök, skiva ner i mindre bitar. Skär burgaren i mindre bitar.",
+      "Stek burgarbitarna, brysselkål, ingefära, vitlök och nötter i smör i en panna.",
+      "Skiva fikon i stora bitar och blanda ner i pannan tillsammans med sirap.",
+      "Stek ytterligare några minuter och smaka av med salt och peppar.",
+    ],
+  },
+];
