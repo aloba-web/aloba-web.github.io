@@ -1,9 +1,13 @@
+import About from "./About/About";
 import Home from "./Home/Home";
 import Recipe from "./Recipe/Recipe";
 import Recipes from "./Recipes/Recipes";
+import What from "./What/What";
 
 export {
     Home,
     Recipe,
-    Recipes
+    Recipes,
+    What,
+    About
   }

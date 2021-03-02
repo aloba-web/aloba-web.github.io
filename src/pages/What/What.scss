@@ -1,0 +1,20 @@
+@import "../../variables.scss";
+
+.what {
+  img.image-divider {
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+  }
+  .container {
+    padding: $side-margin;
+
+    h2 {
+      font-weight: 500;
+    }
+
+    span {
+      font-size: 32px;
+    }
+  }
+}

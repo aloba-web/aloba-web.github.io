@@ -22,8 +22,10 @@ const Sidebar: React.FC<SidebarProps> = ({ open, toggleState }) => {
           </button>
         </div>
         <div className="sidebar-menu-items">
-          <Link to="/">Home</Link>
-          <Link to="/recipe">Recipe</Link>
+          <Link to="/">Hem</Link>
+          <Link to="/about">Om oss</Link>
+          <Link to="/recipe">Recept</Link>
+          <Link to="/what">Vad är Aloba?</Link>
         </div>
         <div className="social-media">
           <a

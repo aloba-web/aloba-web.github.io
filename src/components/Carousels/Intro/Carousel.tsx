@@ -3,24 +3,31 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.scss";
-import tempImage from "../../../assets/temp.jpeg";
+import Hero from "../../../assets/aloba-hero.jpg";
+import Ocean from "../../../assets/ocean.jpg";
+import Land from "../../../assets/land.jpg";
 
 const carouselItems: Array<{ backgroundImage: string; text: string }> = [
   {
-    backgroundImage: tempImage,
+    backgroundImage: Ocean,
     text:
-      "Viste du att alger i våra hav binder lika mycket koldioxid som alla världens träd?",
+      "Alger från de kalla och rena haven utanför Trondheim i Norge. Svensk havre, korn och quinoa – Välkommen att njuta av Alobas burgare och färs – när du vill vara hälsosam mot dig själv, och planeten vi lever på…",
   },
   {
-    backgroundImage: tempImage,
+    backgroundImage: Land,
     text:
-      "Helo",
+      "Alger från de kalla och rena haven utanför Trondheim i Norge. Svensk havre, korn och quinoa – Välkommen att njuta av Alobas burgare och färs – när du vill vara hälsosam mot dig själv, och planeten vi lever på…",
+  },
+  {
+    backgroundImage: Hero,
+    text:
+      "Äntligen! Nu lanserar vi Aloba - ett nytt plantbaserat matkoncept som kombinerar smak och hälsa med utvalda nordiska råvaror. 100% plantbaserat. Och riktigt gott.",
   },
 ];
 
 const Carousel: React.FC = () => {
   var settings = {
-    autoplay: true,
+    autoplay: false,
     arrows: false,
     dots: true,
     infinite: true,

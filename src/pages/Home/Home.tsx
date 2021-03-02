@@ -1,39 +1,51 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+
 import "./Home.scss";
 import { CarouselIntro, CarouselRecipe } from "../../components/Carousels";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import tempImage from "../../assets/temp.jpeg";
+import FoodTruck from "../../assets/food-truck.jpg";
+import Burger from "../../assets/aloba-burger.jpeg";
+import BurgerProduct from "../../assets/aloba-produkt-burgare.jpg";
+import MincedProduct from "../../assets/aloba-produkt-fars.jpg";
 import Card from "../../components/Card";
 import { ReactComponent as SimplySmashing } from "../../assets/simply-smashing.svg";
 import { ReactComponent as Leaf } from "../../assets/leaf.svg";
 
-const What: React.FC = () => (
-  <div className="what">
-    <h2>Vad är Aloba?</h2>
-    <span>Simply smashing food</span>
-    <p>
-      Tristique sodales fusce purus sed massa mauris, turpis commodo. Iaculis
-      bibendum eleifend idesbibendum dictum aliquam. Maecenas sed augue semper
-      adipiscing. Eros, tempus mauris ornare.
-    </p>
-  </div>
-);
+const What: React.FC = () => {
+  const history = useHistory();
+  return (
+    <div className="what">
+      <h2>Vad är Aloba?</h2>
+      <span>Nordiska råvaror från hav & land</span>
+      <p>
+        Välsmakande, enkelt att tillaga och god konsistens – självklart. Men vi 
+        är också besjälade av hälsa.
+      </p>
+      <button onClick={() => history.push("/what")} className="link-button">
+        Läs mer
+      </button>
+    </div>
+  );
+};
 
-const Story: React.FC = () => (
-  <div className="story">
-    <h2>Story och sånt</h2>
-    <p>
-      Est pellentesque nisl habitasse enim pellentesque aliquam. Scelerisque a
-      auctor massa dolor id ultricies scelerisque feugiat. Maecenas leo, morbi
-      sagittis ultricies suspendisse erat dictumst Et vulputate odio sagittis,
-      congue amet, hendrerit dignissim cras. Egestas vehicula lectus faucibus
-      diam, sed non, fames ac lobortis. Enim orci sed convallis cursus sit
-      molestie consectetur eget “At malesuada eu hendrerit arcu diam lacus, in.
-      Lacus tincidunt orci nec enim vel porttitor cras sit nec.”
-    </p>
-  </div>
-);
+const Story: React.FC = () => {
+  const history = useHistory();
+  return (
+    <div className="story">
+      <h2>Om oss</h2>
+      <p>
+        Hållbart och hälsosamt, plantbaserade nordiska råvaror från hav och land
+        – och framförallt en matupplevelse utöver det vanliga. Det var ledorden
+        när vi  började att utveckla Aloba i slutet av 2019.
+      </p>
+      <button onClick={() => history.push("/about")} className="link-button">
+        Läs mer
+      </button>
+    </div>
+  );
+};
 
 const Home = () => {
   return (
@@ -42,15 +54,15 @@ const Home = () => {
       <CarouselIntro />
       <div className="container">
         <What />
-        <img className="image-divider" src={tempImage} alt="divider" />
+        <img className="image-divider" src={Burger} alt="divider" />
         <div className="products">
           <h2>Något om produkter</h2>
-          <Card img={tempImage} text="Bild och produkttext" alt="produkt" />
+          <Card img={BurgerProduct} text="Bild och produkttext" alt="produkt" />
+          <Card img={MincedProduct} text="Bild och produkttext" alt="produkt" />
         </div>
         <SimplySmashing className="icon-divider" />
-        <img className="image-divider" src={tempImage} alt="divider" />
+        <img className="image-divider" src={FoodTruck} alt="divider" />
         <Story />
-        <img className="image-divider" src={tempImage} alt="divider" />
         <CarouselRecipe />
         <Leaf className="icon-divider" />
       </div>

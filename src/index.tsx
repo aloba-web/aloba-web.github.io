@@ -3,13 +3,15 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
-import { Home, Recipe, Recipes } from "./pages";
+import { About, Home, Recipe, Recipes, What } from "./pages";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/what" component={What} />
         <Route exact path="/recipe" component={Recipes} />
         <Route exact path="/recipe/:id" component={Recipe} />
       </Switch>
