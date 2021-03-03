@@ -8,8 +8,9 @@ import { Link } from "react-router-dom";
 export interface FooterProps {}
 
 const links: Array<{ label: string; path: string }> = [
-  { label: "Produkter", path: "/produkter" },
-  { label: "Om Aloba", path: "/about" },
+  { label: "Produkter", path: "/products" },
+  { label: "Butiker", path: "/stores" },
+  { label: "Om oss", path: "/about" },
   { label: "Frågor och svar", path: "/faq" },
   { label: "Kontakta oss", path: "/contact" },
 ];

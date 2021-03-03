@@ -1,0 +1,68 @@
+@import "../../variables.scss";
+
+.product {
+  .container {
+    display: grid;
+    grid-gap: 48px;
+    padding: 32px;
+
+    .header {
+      .sub-header {
+        font-weight: bold;
+      }
+    }
+    .section-wrapper {
+      display: grid;
+      grid-gap: 32px;
+
+      .section {
+        .sub-title {
+          font-weight: bold;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+    h1 {
+      margin: 0;
+    }
+    h2 {
+      font-size: 1rem;
+    }
+  }
+
+  .nutritions-container {
+    align-items: center;
+    background-color: $classic-blue;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+
+    .nutritions-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin: auto;
+      max-width: 400px;
+      .nutritions-divider {
+        height: auto;
+        background-color: white;
+        width: 2px;
+      }
+      .nutritions-amount, .nutritions-name {
+        padding: 16px;
+      }
+    }
+
+    p {
+      color: white;
+      margin: 8px 0;
+    }
+  }
+  img {
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+  }
+}

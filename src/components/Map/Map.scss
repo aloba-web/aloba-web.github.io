@@ -11,20 +11,15 @@
   .text-container {
     align-items: center;
     display: flex;
-    flex-direction: column;
     height: auto;
     justify-content: center;
     margin: auto;
-    padding: 16px;
+    padding: 2px 16px;
     text-align: center;
 
     h3 {
       font-size: 16px;
       font-weight: 500;
-      margin: 0;
-    }
-
-    p {
       margin: 0;
     }
   }

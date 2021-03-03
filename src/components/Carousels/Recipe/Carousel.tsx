@@ -10,7 +10,7 @@ import { recipes } from "../../../pages/Recipes/recipesMock";
 const Carousel: React.FC = () => {
   let dragging = false;
   const settings = {
-    autoplay: false,
+    autoplay: true,
     arrows: true,
     afterChange: () => (dragging = false),
     beforeChange: () => (dragging = true),
@@ -18,7 +18,7 @@ const Carousel: React.FC = () => {
     centerPadding: "32px",
     dots: false,
     slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 600,
@@ -38,8 +38,9 @@ const Carousel: React.FC = () => {
     <Slider className="recipe-carousel" {...settings}>
       {recipes.map((recipe) => (
         <button
+          key={recipe.id}
           className="carousel-item"
-          onClick={() => !dragging && onSlideClick(`/recipe/${recipe.id}`)}
+          onClick={() => !dragging && onSlideClick(`/recipes/${recipe.id}`)}
         >
           <Card
             key={recipe.id}

@@ -3,7 +3,8 @@
 .home {
   img.image-divider {
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    max-height: 500px;
   }
 
   .container {
@@ -15,6 +16,7 @@
     display: grid;
     grid-gap: 32px;
     padding: ($side-margin * 2) $side-margin;
+    justify-content: center;
 
     h2 {
       font-weight: 500;

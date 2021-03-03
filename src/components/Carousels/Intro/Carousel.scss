@@ -7,6 +7,10 @@
     height: 500px;
     position: relative;
 
+    .text {
+      max-width: 600px;
+    }
+
     span {
       position: absolute;
       top: 35%;

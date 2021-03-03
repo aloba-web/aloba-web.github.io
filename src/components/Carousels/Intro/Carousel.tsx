@@ -3,9 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.scss";
-import Hero from "../../../assets/aloba-hero-min.jpg";
-import Ocean from "../../../assets/ocean-min.jpg";
-import Land from "../../../assets/land-min.jpg";
+import Hero from "../../../assets/aloba-table-filter-desktop.jpg";
+import Ocean from "../../../assets/ocean-desktop.jpg";
+import Oats from "../../../assets/oat-desktop.jpg";
 
 const carouselItems: Array<{ backgroundImage: string; text: string }> = [
   {
@@ -14,9 +14,9 @@ const carouselItems: Array<{ backgroundImage: string; text: string }> = [
       "Alger från de kalla och rena haven utanför Trondheim i Norge. Svensk havre, korn och quinoa – Välkommen att njuta av Alobas burgare och färs – när du vill vara hälsosam mot dig själv, och planeten vi lever på…",
   },
   {
-    backgroundImage: Land,
+    backgroundImage: Oats,
     text:
-      "Alger från de kalla och rena haven utanför Trondheim i Norge. Svensk havre, korn och quinoa – Välkommen att njuta av Alobas burgare och färs – när du vill vara hälsosam mot dig själv, och planeten vi lever på…",
+      "Alger från de kalla och rena haven utanför Trondheim i Norge. Svensk havre, korn och quinoa – Välkommen att njuta av Alobas burgare och färs – när du vill vara hälsosam mot dig själv, och planeten vi lever på…",
   },
   {
     backgroundImage: Hero,
@@ -27,7 +27,7 @@ const carouselItems: Array<{ backgroundImage: string; text: string }> = [
 
 const Carousel: React.FC = () => {
   var settings = {
-    autoplay: false,
+    autoplay: true,
     arrows: false,
     dots: true,
     infinite: true,
@@ -41,9 +41,12 @@ const Carousel: React.FC = () => {
         <div key={index}>
           <div
             className="carousel-item"
-            style={{ backgroundImage: `url(${item.backgroundImage})` }}
+            style={{
+              backgroundPosition: "bottom",
+              backgroundImage: `url(${item.backgroundImage})`,
+            }}
           >
-            <span>{item.text}</span>
+            <span className="text" style={{fontWeight: "bold"}}>{item.text}</span>
           </div>
         </div>
       ))}

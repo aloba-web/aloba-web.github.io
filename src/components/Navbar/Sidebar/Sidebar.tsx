@@ -23,9 +23,12 @@ const Sidebar: React.FC<SidebarProps> = ({ open, toggleState }) => {
         </div>
         <div className="sidebar-menu-items">
           <Link to="/">Hem</Link>
+          <Link to="/products">Produkter</Link>
+          <Link to="/stores">Butiker</Link>
           <Link to="/about">Om oss</Link>
-          <Link to="/recipe">Recept</Link>
-          <Link to="/what">Vad är Aloba?</Link>
+          <Link to="/recipes">Recept</Link>
+          <Link to="/faq">Frågor & svar</Link>
+          <Link to="/Contact">Kontakt</Link>
         </div>
         <div className="social-media">
           <a
@@ -35,7 +38,11 @@ const Sidebar: React.FC<SidebarProps> = ({ open, toggleState }) => {
           >
             <InstagramLogo />
           </a>
-          <a target="_blank" rel="noreferrer" href="">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.facebook.com/alobafoods"
+          >
             <FacebookLogo />
           </a>
         </div>

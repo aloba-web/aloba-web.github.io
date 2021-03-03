@@ -1,0 +1,40 @@
+@import "../../variables.scss";
+
+.products {
+  .container {
+    padding: $side-margin;
+    display: grid;
+    justify-content: center;
+    grid-gap: 32px;
+
+    .card-wrapper {
+      max-width: 500px;
+    }
+  }
+  h1 {
+    text-align: center;
+  }
+  img {
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.products-about {
+  background-color: $classic-blue;
+  display: flex;
+  justify-content: center;
+
+  .wrapper {
+    padding: 32px;
+    @media screen and (min-width: 600px) {
+      max-width: 600px;
+    }
+  }
+
+  p,
+  h1 {
+    color: white;
+  }
+}

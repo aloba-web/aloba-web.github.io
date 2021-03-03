@@ -1,0 +1,44 @@
+@import "../../variables.scss";
+
+.contact {
+  text-align: center;
+
+  .contact-info {
+    margin-bottom: 64px;
+  }
+
+  .header {
+    margin-bottom: 32px;
+  }
+
+  .qna {
+    background-color: $classic-blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    padding: 64px;
+
+    button.link-button {
+      background-color: white;
+      border: none;
+      color: $classic-blue;
+      font-weight: 600;
+      margin-top: 32px;
+      padding: 8px 16px;
+    }
+
+    h2,
+    p {
+      color: white;
+    }
+  }
+
+  h1 {
+    margin-bottom: 64px;
+  }
+  p {
+    margin: 0;
+  }
+}

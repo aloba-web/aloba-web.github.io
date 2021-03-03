@@ -1,0 +1,22 @@
+@import "../../variables.scss";
+
+.stores {
+  padding: 32px;
+  margin-bottom: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .store-list {
+    display: grid;
+    grid-gap: 16px;
+    .store-item {
+      .store-name {
+        display: block;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-bottom: 4px;
+      }
+    }
+  }
+}

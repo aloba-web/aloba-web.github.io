@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import "./Home.scss";
 import { CarouselIntro, CarouselRecipe } from "../../components/Carousels";
@@ -7,11 +7,9 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import FoodTruckHeroes from "../../assets/food-truck-heroes-min.jpg";
 import Salad from "../../assets/salad-min.jpeg";
-import BurgerProduct from "../../assets/aloba-produkt-burgare-min.jpg";
-import MincedProduct from "../../assets/aloba-produkt-fars-min.jpg";
 import Card from "../../components/Card";
-import { ReactComponent as SimplySmashing } from "../../assets/simply-smashing.svg";
 import { ReactComponent as Leaf } from "../../assets/leaf.svg";
+import { productsDataMock } from "../Products/Products";
 
 const What: React.FC = () => {
   const history = useHistory();
@@ -25,18 +23,30 @@ const What: React.FC = () => {
         hittar Aloba i frysdisken i välsorterade matbutiker. 100% plantbaserat.
         Och riktigt gott.
       </p>
-      <button onClick={() => history.push("/what")} className="link-button">
+      <button onClick={() => history.push("/products")} className="link-button">
         Våra produkter
       </button>
     </div>
   );
 };
 
-const Products: React.FC = () => (
+const ProductsContainer: React.FC = () => (
   <div className="products">
-    <h2>Våra produkter</h2>
-    <Card img={BurgerProduct} text="Bild och produkttext" alt="produkt" />
-    <Card img={MincedProduct} text="Bild och produkttext" alt="produkt" />
+    <h1>Våra produkter</h1>
+    {productsDataMock.map((product) => (
+      <Link
+        style={{ maxWidth: "300px" }}
+        key={product.id}
+        to={`/products/${product.id}`}
+      >
+        <Card
+          img={product.image}
+          title={product.title}
+          text={product.description}
+          alt={product.title}
+        />
+      </Link>
+    ))}
   </div>
 );
 
@@ -65,8 +75,7 @@ const Home = () => {
       <div className="container">
         <What />
         <img className="image-divider" src={Salad} alt="divider" />
-        <Products />
-        <SimplySmashing className="icon-divider" />
+        <ProductsContainer />
         <img className="image-divider" src={FoodTruckHeroes} alt="divider" />
         <Story />
         <CarouselRecipe />

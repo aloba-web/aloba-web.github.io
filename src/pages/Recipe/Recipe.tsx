@@ -22,8 +22,8 @@ const getIngredients: React.FC<RecipeObj> = (recipe: RecipeObj) => (
   <div>
     <h2>Ingredienser</h2>
     <div className="list">
-      {recipe?.ingredients.map((ingredient) => (
-        <span>{ingredient}</span>
+      {recipe?.ingredients.map((ingredient, index) => (
+        <span key={index}>{ingredient}</span>
       ))}
     </div>
   </div>
@@ -33,15 +33,15 @@ const getSteps: React.FC<RecipeObj> = (recipe: RecipeObj) => (
   <div>
     <h2>Gör så här</h2>
     <div className="list">
-      {recipe?.steps.map((step) => (
-        <span>{step}</span>
+      {recipe?.steps.map((step, index) => (
+        <span key={index}>{step}</span>
       ))}
     </div>
   </div>
 );
 
 const Recipe: React.FC = () => {
-  let { id } = useParams<RouteParams>();
+  const { id } = useParams<RouteParams>();
   const recipe = recipes.find((recipe) => recipe.id === id);
 
   return (
