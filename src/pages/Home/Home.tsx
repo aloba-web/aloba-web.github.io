@@ -1,20 +1,19 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import "./Home.scss";
 import { CarouselIntro, CarouselRecipe } from "../../components/Carousels";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import Products from "../../components/ProductsCards";
 import FoodTruckHeroes from "../../assets/food-truck-heroes-min.jpg";
 import Salad from "../../assets/salad-min.jpeg";
-import Card from "../../components/Card";
 import { ReactComponent as Leaf } from "../../assets/leaf.svg";
-import { productsDataMock } from "../Products/Products";
 
 const What: React.FC = () => {
   const history = useHistory();
   return (
-    <div className="what">
+    <div className="what container">
       <h2>Vad är Aloba?</h2>
       <span>100% plantbaserat</span>
       <p>
@@ -31,29 +30,16 @@ const What: React.FC = () => {
 };
 
 const ProductsContainer: React.FC = () => (
-  <div className="products">
+  <div className="products container">
     <h1>Våra produkter</h1>
-    {productsDataMock.map((product) => (
-      <Link
-        style={{ maxWidth: "300px" }}
-        key={product.id}
-        to={`/products/${product.id}`}
-      >
-        <Card
-          img={product.image}
-          title={product.title}
-          text={product.description}
-          alt={product.title}
-        />
-      </Link>
-    ))}
+    <Products />
   </div>
 );
 
 const Story: React.FC = () => {
   const history = useHistory();
   return (
-    <div className="story">
+    <div className="story container">
       <h2>Om oss och vår filosofi</h2>
       <p>
         Hållbart och hälsosamt, plantbaserade nordiska råvaror från hav och land
@@ -72,15 +58,13 @@ const Home = () => {
     <div className="home">
       <Navbar />
       <CarouselIntro />
-      <div className="container">
-        <What />
-        <img className="image-divider" src={Salad} alt="divider" />
-        <ProductsContainer />
-        <img className="image-divider" src={FoodTruckHeroes} alt="divider" />
-        <Story />
-        <CarouselRecipe />
-        <Leaf className="icon-divider" />
-      </div>
+      <What />
+      <img className="image-divider" src={Salad} alt="divider" />
+      <ProductsContainer />
+      <img className="image-divider" src={FoodTruckHeroes} alt="divider" />
+      <Story />
+      <CarouselRecipe />
+      <Leaf className="icon-divider" />
       <Footer />
     </div>
   );

@@ -1,17 +1,9 @@
 @import "../../variables.scss";
 
 .products {
-  .container {
-    padding: $side-margin;
-    display: grid;
-    justify-content: center;
-    grid-gap: 32px;
-
-    .card-wrapper {
-      max-width: 500px;
-    }
-  }
   h1 {
+    margin: 0;
+    padding-bottom: 32px;
     text-align: center;
   }
   img {
@@ -25,13 +17,7 @@
   background-color: $classic-blue;
   display: flex;
   justify-content: center;
-
-  .wrapper {
-    padding: 32px;
-    @media screen and (min-width: 600px) {
-      max-width: 600px;
-    }
-  }
+  padding: 32px;
 
   p,
   h1 {

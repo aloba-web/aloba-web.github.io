@@ -11,7 +11,7 @@ const carouselItems: Array<{ backgroundImage: string; text: string }> = [
   {
     backgroundImage: Ocean,
     text:
-      "Alger från de kalla och rena haven utanför Trondheim i Norge. Svensk havre, korn och quinoa – Välkommen att njuta av Alobas burgare och färs – när du vill vara hälsosam mot dig själv, och planeten vi lever på…",
+      "Alger från de kalla och rena haven utanför Trondheim i Norge. Svensk havre, korn och quinoa – Välkommen att njuta av Alobas burgare och färs – när du vill vara hälsosam mot dig själv, och planeten vi lever på…",
   },
   {
     backgroundImage: Oats,

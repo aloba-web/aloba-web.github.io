@@ -23,6 +23,7 @@ body {
   h5 {
     color: $classic-blue;
     font-family: "Poppins", "Helvetica Neue", sans-serif;
+    margin-top: 0;
   }
 
   a,
@@ -36,6 +37,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.container {
+  margin: 8vw auto;
+  max-width: 600px;
 }
 
 .slick-track {

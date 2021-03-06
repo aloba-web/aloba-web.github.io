@@ -1,12 +1,11 @@
 import React from "react";
 import Footer from "../../components/Footer";
+import ProductsCards from "../../components/ProductsCards";
 import Navbar from "../../components/Navbar";
-import ProductsTable from "../../assets/aloba-table-filter-desktop.jpg";
 import BurgerProduct from "../../assets/aloba-produkt-burgare-min.jpg";
 import MincedProduct from "../../assets/aloba-produkt-fars-min.jpg";
-import Card from "../../components/Card";
 import "./Products.scss";
-import { Link } from "react-router-dom";
+
 
 export interface Product {
   amount: string;
@@ -186,20 +185,7 @@ export const productsDataMock: Array<Product> = [
 const ProductsContainer: React.FC = () => (
   <div className="container">
     <h1>Våra produkter</h1>
-    {productsDataMock.map((product) => (
-      <Link
-        className="card-wrapper"
-        key={product.id}
-        to={`/products/${product.id}`}
-      >
-        <Card
-          img={product.image}
-          title={product.title}
-          text={product.description}
-          alt={product.title}
-        />
-      </Link>
-    ))}
+    <ProductsCards />
   </div>
 );
 
@@ -208,11 +194,10 @@ const Products: React.FC = () => {
     <>
       <Navbar />
       <div className="products">
-        <img src={ProductsTable} alt="aloba products" />
         <ProductsContainer />
       </div>
       <div className="products-about">
-        <div className="wrapper">
+        <div className="container">
           <h1>Vad är Aloba?</h1>
           <p>
             Nordiska råvaror från hav & land. 100% plantbaserat. Välsmakande,

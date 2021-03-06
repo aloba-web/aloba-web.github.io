@@ -10,7 +10,7 @@ const About: React.FC = () => {
       <Navbar />
       <div className="about">
         <img className="image-divider" src={FoodTruck} alt="divider" />
-        <div className="container">
+        <div className="about-text container">
           <h1>Om oss och vår filosofi</h1>
           <p>
             Vi är en spridd skara av entreprenörer och forskare som brinner för

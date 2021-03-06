@@ -18,11 +18,11 @@ const questions: Array<Question> = [
   {
     question: "Vad innehåller Aloba?",
     answer: (
-      <>
+      <span>
         Se respektive produkters ingredienser & näringsvärden:{" "}
         <Link to="/products/1">plantbaserade burgare</Link> &{" "}
         <Link to="/products/2">plantbaserad färs</Link>
-      </>
+      </span>
     ),
   },
   {
@@ -68,13 +68,13 @@ const questions: Array<Question> = [
   {
     question: "Finns några allergener?",
     answer: (
-      <>
+      <span>
         Aloba är inte glutenfri och det finns även en möjlighet, om än minimal,
         att algerna kan ha spår av fisk och skaldjur, då de odlas i havet. Se
         respektive produkters ingredienser & näringsvärden:{" "}
         <Link to="/products/1">plantbaserade burgare</Link> &{" "}
         <Link to="/products/2">plantbaserad färs</Link>
-      </>
+      </span>
     ),
   },
   {
@@ -95,55 +95,53 @@ const questions: Array<Question> = [
   {
     question: "Finns recept till Aloba?",
     answer: (
-      <>
+      <span>
         Ja, det finns ett på förpackningen och fler hittar du här:{" "}
         <Link to="/recipes">Recept och inspration</Link>
-      </>
+      </span>
     ),
   },
   {
     question: "Var kan jag köpa Aloba?",
     answer: (
-      <>
+      <span>
         Nu finns vi i utvalda butiker i Stockholm, men har ambitionen att nå
         alltfler butiker runtom i Sverige. Fråga gärna i din butik så ökar
         chansen att kedjorna tar in Aloba. Här hittar du i vilka butiker vi
         finns nu: <Link to="/stores">Butiker</Link>
-      </>
+      </span>
     ),
   },
 ];
 
-const getQuestions = (data: Array<Question>) =>
-  data.map((question, index) => (
-    <div key={index} className="question">
-      <h3>{question.question}</h3>
-      <p>{question.answer}</p>
-    </div>
-  ));
+const getQuestions = (data: Array<Question>) => (
+  <div className="questions">
+    {data.map((question, index) => (
+      <div key={index} className="question">
+        <h3>{question.question}</h3>
+        <p>{question.answer}</p>
+      </div>
+    ))}
+  </div>
+);
 
 const What: React.FC = () => {
   return (
     <>
       <Navbar />
-      <div className="faq">
-        <div className="wrapper">
-          <div className="header-container">
-            <h1>Frågor & svar</h1>
-            <p>
-              Här har vi samlat frågor och svar. Hittar du inte svaret på din
-              fråga, maila oss gärna på{" "}
-              <a
-                style={{ fontWeight: "bold" }}
-                href="mailto:info@alobafoods.se"
-              >
-                info@alobafoods.se
-              </a>{" "}
-              så ska vi göra vårt bästa för att svara på dina frågor.
-            </p>
-          </div>
-          {getQuestions(questions)}
+      <div className="faq container">
+        <div className="header-container">
+          <h1>Frågor & svar</h1>
+          <p>
+            Här har vi samlat frågor och svar. Hittar du inte svaret på din
+            fråga, maila oss gärna på{" "}
+            <a style={{ fontWeight: "bold" }} href="mailto:info@alobafoods.se">
+              info@alobafoods.se
+            </a>{" "}
+            så ska vi göra vårt bästa för att svara på dina frågor.
+          </p>
         </div>
+        {getQuestions(questions)}
       </div>
       <Footer />
     </>

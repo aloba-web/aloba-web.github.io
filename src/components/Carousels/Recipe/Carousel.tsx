@@ -17,13 +17,27 @@ const Carousel: React.FC = () => {
     centerMode: true,
     centerPadding: "32px",
     dots: false,
-    slidesToShow: 2,
+    slidesToShow: 4,
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 600,
+        breakpoint: 575,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },

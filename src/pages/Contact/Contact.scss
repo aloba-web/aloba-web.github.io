@@ -3,8 +3,9 @@
 .contact {
   text-align: center;
 
-  .contact-info {
-    margin-bottom: 64px;
+  .contact-info-text-wrapper {
+    padding: 0 32px;
+    margin: 32px 0;
   }
 
   .header {
@@ -18,7 +19,7 @@
     align-items: center;
     justify-content: center;
     height: 300px;
-    padding: 64px;
+    padding: 0 64px;
 
     button.link-button {
       background-color: white;

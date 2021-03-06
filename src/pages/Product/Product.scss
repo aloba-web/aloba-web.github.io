@@ -2,9 +2,7 @@
 
 .product {
   .container {
-    display: grid;
-    grid-gap: 48px;
-    padding: 32px;
+    padding: 0 32px;
 
     .header {
       .sub-header {
@@ -50,7 +48,8 @@
         background-color: white;
         width: 2px;
       }
-      .nutritions-amount, .nutritions-name {
+      .nutritions-amount,
+      .nutritions-name {
         padding: 16px;
       }
     }
