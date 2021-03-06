@@ -28,7 +28,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, toggleState }) => {
           <Link to="/about">Om oss</Link>
           <Link to="/recipes">Recept</Link>
           <Link to="/faq">Frågor & svar</Link>
-          <Link to="/Contact">Kontakt</Link>
+          <Link to="/contact">Kontakt</Link>
         </div>
         <div className="social-media">
           <a
