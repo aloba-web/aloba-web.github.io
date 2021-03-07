@@ -22,7 +22,7 @@ export interface Product {
 export const productsDataMock: Array<Product> = [
   {
     amount: "4x100g",
-    id: "1",
+    id: "burgare",
     title: "Plantbaserade burgare",
     image: BurgerProduct,
     nutritions: [
@@ -102,7 +102,7 @@ export const productsDataMock: Array<Product> = [
   },
   {
     amount: "400g",
-    id: "2",
+    id: "fars",
     image: MincedProduct,
     ingredients: [
       "Ärtprotein",

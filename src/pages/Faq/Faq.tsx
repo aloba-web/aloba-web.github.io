@@ -20,8 +20,8 @@ const questions: Array<Question> = [
     answer: (
       <span>
         Se respektive produkters ingredienser & näringsvärden:{" "}
-        <Link to="/products/1">plantbaserade burgare</Link> &{" "}
-        <Link to="/products/2">plantbaserad färs</Link>
+        <Link to="/products/burgare">plantbaserade burgare</Link> &{" "}
+        <Link to="/products/fars">plantbaserad färs</Link>
       </span>
     ),
   },
