@@ -23,6 +23,16 @@ const storesData: Array<StoresData> = [
       "https://www.google.com/maps/place/ICA+Kvantum+Liding%C3%B6/@59.3496147,18.1461782,15z/data=!4m5!3m4!1s0x0:0x540d5b0afab1200!8m2!3d59.3496147!4d18.1461782",
   },
   {
+    storeName: "ICA Kvantum Mall of Scandinavia",
+    address: "Evenemangsgatan 6, 169 79 Solna",
+    mapsLink: "https://goo.gl/maps/hzXrfXZ3CVWFPHmcA",
+  },
+  {
+    storeName: "ICA Kvantum Södermalm",
+    address: "Magnus Ladulåsgatan 40, 118 27 Stockholm",
+    mapsLink: "https://goo.gl/maps/jBhM35z1fmPVxBpV7",
+  },
+  {
     storeName: "ICA Supermarket Hagsätra",
     address: "Hagsätra torg 28, 124 73 Bandhagen",
     mapsLink:
