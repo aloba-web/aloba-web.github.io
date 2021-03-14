@@ -35,15 +35,15 @@ export const productsDataMock: Array<Product> = [
         amount: "2,7 g",
       },
       {
-        name: "Mättat fett",
+        name: "  varav mättat fett",
         amount: "0,3 g",
       },
       {
-        name: "Enkelomättat fett",
+        name: "  varav enkelomättat fett",
         amount: "1,0 g",
       },
       {
-        name: "Fleromättat fett",
+        name: "  varav fleromättat fett",
         amount: "1,1 g",
       },
       {
@@ -70,13 +70,13 @@ export const productsDataMock: Array<Product> = [
     ingredients: [
       "Ärtprotein",
       "Kikärter",
-      "Korn*",
+      "<b>Korn*</b>",
       "Morötter*",
       "Palsternacka*",
       "Lök",
       "Sockertång** (Saccharina latissima)",
       "Quinoa*",
-      "Havre*",
+      "<b>Havre*</b>",
       "Rapsolja",
       "Salt",
       "Metylcellulosa",
@@ -107,13 +107,13 @@ export const productsDataMock: Array<Product> = [
     ingredients: [
       "Ärtprotein",
       "Kikärter",
-      "Korn*",
+      "<b>Korn*</b>",
       "Morötter*",
       "Palsternacka*",
       "Lök",
       "Sockertång** (Saccharina latissima)",
       "Quinoa*",
-      "Havre*",
+      "<b>Havre*</b>",
       "Rapsolja",
       "Salt",
       "Metylcellulosa",
@@ -141,15 +141,15 @@ export const productsDataMock: Array<Product> = [
         amount: "2,7 g",
       },
       {
-        name: "Mättat fett",
+        name: "  varav mättat fett",
         amount: "0,3 g",
       },
       {
-        name: "Enkelomättat fett",
+        name: "  varav enkelomättat fett",
         amount: "1,0 g",
       },
       {
-        name: "Fleromättat fett",
+        name: "  varav fleromättat fett",
         amount: "1,1 g",
       },
       {

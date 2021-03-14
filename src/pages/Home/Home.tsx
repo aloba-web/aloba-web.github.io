@@ -17,8 +17,8 @@ const What: React.FC = () => {
       <h2>Vad är Aloba?</h2>
       <span>100% plantbaserat</span>
       <p>
-        Låt dina smaklökar kittlas av utvalda nordiska  råvaror i form av
-        burgare eller färs - helt fri från soja - och tillagad i Sverige. Du
+        Låt dina smaklökar kittlas av utvalda nordiska råvaror i form av
+        burgare eller färs. Helt fri från soja och tillagad i Sverige. Du
         hittar Aloba i frysdisken i välsorterade matbutiker. 100% plantbaserat.
         Och riktigt gott.
       </p>

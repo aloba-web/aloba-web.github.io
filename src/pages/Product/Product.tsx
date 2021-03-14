@@ -26,13 +26,16 @@ const getNutritions: React.FC<Product> = (product: Product) => (
         ))}
       </div>
     </div>
-    <p>100 g Aloba ger 147% av rekommenderat dagligt intag (RDI) av jod.</p>
+    <p className="disclaimer">100 g Aloba ger 147% av rekommenderat dagligt intag (RDI) av jod.</p>
   </div>
 );
 
 const Products: React.FC = () => {
   const { id } = useParams<RouteParams>();
   const product = productsDataMock.find((product) => product.id === id);
+  const createMarkup = (markup: string) => {
+    return { __html: markup };
+  };
 
   return (
     <>
@@ -52,12 +55,15 @@ const Products: React.FC = () => {
             <div className="section">
               <span className="sub-title">Innehåll</span>
               <p>
-                {product?.ingredients.map(
-                  (ingredient, index) =>
-                    `${ingredient}${
-                      index < product.ingredients.length - 1 ? ", " : ""
-                    }`
-                )}
+                {product?.ingredients.map((ingredient, index) => (
+                  <span key={ingredient}
+                    dangerouslySetInnerHTML={createMarkup(
+                      `${ingredient}${
+                        index < product.ingredients.length - 1 ? ", " : ""
+                      }`
+                    )}
+                  ></span>
+                ))}
               </p>
             </div>
             <div className="section">

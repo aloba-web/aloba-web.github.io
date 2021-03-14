@@ -36,7 +36,10 @@
     background-color: $classic-blue;
     display: flex;
     flex-direction: column;
-    padding: 32px;
+
+    .disclaimer {
+      margin: 32px;
+    }
 
     .nutritions-wrapper {
       display: flex;
@@ -50,6 +53,7 @@
       }
       .nutritions-amount,
       .nutritions-name {
+        white-space: pre-wrap;
         padding: 16px;
       }
     }

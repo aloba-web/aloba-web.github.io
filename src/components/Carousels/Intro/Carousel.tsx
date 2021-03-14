@@ -10,18 +10,15 @@ import Oats from "../../../assets/oat-desktop.jpg";
 const carouselItems: Array<{ backgroundImage: string; text: string }> = [
   {
     backgroundImage: Ocean,
-    text:
-      "Alger från de kalla och rena haven utanför Trondheim i Norge. Svensk havre, korn och quinoa – Välkommen att njuta av Alobas burgare och färs – när du vill vara hälsosam mot dig själv, och planeten vi lever på…",
+    text: "Alger från de kalla och rena haven utanför Trondheim i Norge",
   },
   {
     backgroundImage: Oats,
-    text:
-      "Alger från de kalla och rena haven utanför Trondheim i Norge. Svensk havre, korn och quinoa – Välkommen att njuta av Alobas burgare och färs – när du vill vara hälsosam mot dig själv, och planeten vi lever på…",
+    text: "100% plantbaserat med bland annat svenskt havre, korn och quinoa",
   },
   {
     backgroundImage: Hero,
-    text:
-      "Äntligen! Nu lanserar vi Aloba - ett nytt plantbaserat matkoncept som kombinerar smak och hälsa med utvalda nordiska råvaror. 100% plantbaserat. Och riktigt gott.",
+    text: "Äntligen! Nu lanserar vi Aloba",
   },
 ];
 
@@ -46,7 +43,9 @@ const Carousel: React.FC = () => {
               backgroundImage: `url(${item.backgroundImage})`,
             }}
           >
-            <span className="text" style={{fontWeight: "bold"}}>{item.text}</span>
+            <span className="text" style={{ fontWeight: "bold" }}>
+              {item.text}
+            </span>
           </div>
         </div>
       ))}
