@@ -1,15 +1,21 @@
 @import "../../variables.scss";
 
 .stores {
-  padding: 32px;
-  margin-bottom: 200px;
   display: flex;
   align-items: center;
   flex-direction: column;
 
+  .header {
+    margin: 32px;
+    .title {
+      margin: 0;
+    }
+  }
+
   .store-list {
     display: grid;
     grid-gap: 16px;
+    padding: 0 32px;
     .store-item {
       .store-name {
         display: block;
@@ -17,6 +23,25 @@
         text-decoration: underline;
         margin-bottom: 4px;
       }
+    }
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 32px;
+
+    @media screen and (max-width: 900px) {
+      display: grid;
+      grid-gap: 32px;
+    }
+  }
+
+  .map-wrapper {
+    width: 500px;
+
+    @media screen and (max-width: 900px) {
+      width: 100%;
     }
   }
 }

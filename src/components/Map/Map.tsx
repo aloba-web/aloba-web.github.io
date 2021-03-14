@@ -1,52 +1,46 @@
-import React, { useEffect } from "react";
+import { LatLngBoundsExpression, LatLngTuple } from "leaflet";
+import React from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { storesData } from "../../pages/Stores/Stores";
 import "./Map.scss";
 
-const GOOGLE_API_KEY = "AIzaSyAcq2MSwA2F8se2g97tckeoIDHceERXgM4";
+export interface MapProps {}
 
-const Map = () => {
-  let map: any;
-  let service: google.maps.places.PlacesService;
-
-  const request = {
-    placeId: "ChIJj2UVkuidX0YRTYMsbQEsCPI",
-    fields: ["name", "formatted_address", "place_id", "geometry"],
-  };
-
-  const initMap = () => {
-    const mapElement = document.getElementById("map");
-    console.log(mapElement);
-
-    if (mapElement) {
-      map = new google.maps.Map(mapElement, {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 8,
-      });
-      service = new google.maps.places.PlacesService(map);
-      service.getDetails(request, (place, status) => {
-        
-      })
+const Map: React.FC<MapProps> = () => {
+  const bounds: LatLngBoundsExpression = [];
+  const getMarkers = storesData.map(
+    ({ lat, lng, storeName, address, mapsLink }) => {
+      const coordinates: LatLngTuple = [lat, lng];
+      bounds.push(coordinates);
+      return (
+        <Marker key={mapsLink} position={[lat, lng]}>
+          <Popup>
+            <b>{storeName}</b>
+            <br />
+            {address}
+            <br />
+            <a target="_blank" rel="noreferrer" href={mapsLink}>
+              Hitta hit
+            </a>
+          </Popup>
+        </Marker>
+      );
     }
-  };
+  );
 
-  const infoWindow = new google.maps.InfoWindow({
-    content: `<div>Data</div>`,
-  });
-
-  useEffect(() => {
-    initMap();
-    const marker = new google.maps.Marker({
-      position: { lat: -34.397, lng: 150.644 },
-      title: "ICA MAXI",
-      map,
-    });
-
-    marker.addListener("click", () => {
-      infoWindow.setContent("marker1");
-      infoWindow.open(map, marker);
-    });
-  });
-
-  return <div style={{ height: "100vh", width: "100%" }} id="map"></div>;
+  return (
+    <MapContainer
+      attributionControl={false}
+      bounds={bounds}
+      boundsOptions={{ padding: [10, 10] }}
+      zoom={5}
+      scrollWheelZoom={false}
+      style={{ height: 400, width: "100%" }}
+    >
+      <TileLayer url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png" />
+      {getMarkers}
+    </MapContainer>
+  );
 };
 
 export default Map;
