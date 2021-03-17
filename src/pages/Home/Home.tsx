@@ -9,6 +9,7 @@ import Products from "../../components/ProductsCards";
 import FoodTruckHeroes from "../../assets/food-truck-heroes-min.jpg";
 import Salad from "../../assets/salad-min.jpeg";
 import { ReactComponent as Leaf } from "../../assets/leaf.svg";
+import useFetch from "../../hooks/useFetch";
 
 const What: React.FC = () => {
   const history = useHistory();
@@ -17,10 +18,10 @@ const What: React.FC = () => {
       <h2>Vad är Aloba?</h2>
       <span>100% plantbaserat</span>
       <p>
-        Låt dina smaklökar kittlas av utvalda nordiska råvaror i form av
-        burgare eller färs. Helt fri från soja och tillagad i Sverige. Du
-        hittar Aloba i frysdisken i välsorterade matbutiker. 100% plantbaserat.
-        Och riktigt gott.
+        Låt dina smaklökar kittlas av utvalda nordiska råvaror i form av burgare
+        eller färs. Helt fri från soja och tillagad i Sverige. Du hittar Aloba i
+        frysdisken i välsorterade matbutiker. 100% plantbaserat. Och riktigt
+        gott.
       </p>
       <button onClick={() => history.push("/products")} className="link-button">
         Våra produkter
@@ -54,6 +55,8 @@ const Story: React.FC = () => {
 };
 
 const Home = () => {
+  const { complete, data } = useFetch("home");
+
   return (
     <div className="home">
       <Navbar />
