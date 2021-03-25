@@ -14,26 +14,24 @@ import {
   Recipe,
   Recipes,
   Stores,
-  What,
 } from "./pages";
 
 ReactDOM.render(
   <React.StrictMode>
-      <Router>
+    <Router>
       <ScrollToTop />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/faq" component={Faq} />
-          <Route exact path="/products" component={Products} />
-          <Route exact path="/products/:id" component={Product} />
-          <Route exact path="/stores" component={Stores} />
-          <Route exact path="/what" component={What} />
-          <Route exact path="/recipes" component={Recipes} />
-          <Route exact path="/recipes/:id" component={Recipe} />
-        </Switch>
-      </Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/faq" component={Faq} />
+        <Route exact path="/products" component={Products} />
+        <Route exact path="/products/:id" component={Product} />
+        <Route exact path="/stores" component={Stores} />
+        <Route exact path="/recipes" component={Recipes} />
+        <Route exact path="/recipes/:id" component={Recipe} />
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );
