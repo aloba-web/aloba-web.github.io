@@ -1,9 +1,11 @@
 import React from "react";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import "./Product.scss";
 import { useParams } from "react-router-dom";
-import { Product, productsDataMock } from "../Products/Products";
+import useFetch, { POST_TYPE } from "../../hooks/fetch/useFetch";
+import { Product } from "../../hooks/fetch/fetchTypes";
+import { createMarkup } from "../../utils/utils";
+import "./Product.scss";
 
 interface RouteParams {
   id: string;
@@ -14,28 +16,46 @@ const getNutritions: React.FC<Product> = (product: Product) => (
     <div className="nutritions-wrapper">
       <div className="nutritions-name">
         <p style={{ fontWeight: "bold" }}>Näringsvärden</p>
-        {product.nutritions.map((nutrition, index) => (
-          <p key={index}>{nutrition.name}</p>
-        ))}
+        <p>Energi</p>
+        <p>Fett</p>
+        <p> varav mättat fett</p>
+        <p> varav enkelomättat fett</p>
+        <p> varav fleromättat fett</p>
+        <p>Kolhydrater</p>
+        <p>Sockerarter</p>
+        <p>Fiber</p>
+        <p>Protein</p>
+        <p>Salt</p>
       </div>
       <div className="nutritions-divider"></div>
       <div className="nutritions-amount">
         <p style={{ fontWeight: "bold" }}>per 100 g</p>
-        {product.nutritions.map((nutrition, index) => (
-          <p key={index}>{nutrition.amount}</p>
-        ))}
+        <p>{product.nutritions.energy}</p>
+        <p>{product.nutritions?.fat?.fat}</p>
+        <p>{product.nutritions?.fat?.ofWhich?.saturatedFat}</p>
+        <p>{product.nutritions?.fat?.ofWhich?.monounsaturatedFat}</p>
+        <p>{product.nutritions?.fat?.ofWhich?.polyunsaturatedFat}</p>
+        <p>{product.nutritions?.carbohydrates}</p>
+        <p>{product.nutritions?.sugars}</p>
+        <p>{product.nutritions?.fiber}</p>
+        <p>{product.nutritions?.protein}</p>
+        <p>{product.nutritions?.salt}</p>
       </div>
     </div>
-    <p className="disclaimer">100 g Aloba ger 147% av rekommenderat dagligt intag (RDI) av jod.</p>
+    <p className="disclaimer">{product.nutritions?.rdiDisclaimer}</p>
   </div>
 );
 
 const Products: React.FC = () => {
   const { id } = useParams<RouteParams>();
-  const product = productsDataMock.find((product) => product.id === id);
-  const createMarkup = (markup: string) => {
-    return { __html: markup };
-  };
+  const { complete, data } = useFetch({
+    postType: POST_TYPE.PRODUCTS,
+    slug: id,
+  });
+
+  if (!complete || !data) return <></>;
+
+  const [product] = data as Array<Product>;
 
   return (
     <>
@@ -45,31 +65,20 @@ const Products: React.FC = () => {
         <div className="container">
           <div className="header">
             <h1>{product?.title}</h1>
-            <span className="sub-header">{product?.amount}</span>
+            <span className="sub-header">{product?.subtitle}</span>
           </div>
           <div className="section-wrapper">
             <div className="section">
-              <span className="sub-title">Förvaring</span>
-              <p>{product?.storage}</p>
+              <span className="sub-title">{product.keeping?.title}</span>
+              <p
+                dangerouslySetInnerHTML={createMarkup(product.keeping?.text)}
+              />
             </div>
             <div className="section">
-              <span className="sub-title">Innehåll</span>
-              <p>
-                {product?.ingredients.map((ingredient, index) => (
-                  <span key={ingredient}
-                    dangerouslySetInnerHTML={createMarkup(
-                      `${ingredient}${
-                        index < product.ingredients.length - 1 ? ", " : ""
-                      }`
-                    )}
-                  ></span>
-                ))}
-              </p>
-            </div>
-            <div className="section">
-              {product?.disclaimers.map((disclaimer, index) => (
-                <p key={index}>{disclaimer}</p>
-              ))}
+              <span className="sub-title">{product.contains?.title}</span>
+              <p
+                dangerouslySetInnerHTML={createMarkup(product.contains?.text)}
+              />
             </div>
           </div>
         </div>

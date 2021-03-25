@@ -1,71 +1,65 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 
 import "./Home.scss";
 import { CarouselIntro, CarouselRecipe } from "../../components/Carousels";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Products from "../../components/ProductsCards";
-import FoodTruckHeroes from "../../assets/food-truck-heroes-min.jpg";
-import Salad from "../../assets/salad-min.jpeg";
 import { ReactComponent as Leaf } from "../../assets/leaf.svg";
-import useFetch from "../../hooks/useFetch";
+import useFetch from "../../hooks/fetch/useFetch";
+import { PAGE } from "..";
+import About from "./About";
+import What from "./What";
+import { Home } from "../../hooks/fetch/fetchTypes";
 
-const What: React.FC = () => {
-  const history = useHistory();
-  return (
-    <div className="what container">
-      <h2>Vad är Aloba?</h2>
-      <span>100% plantbaserat</span>
-      <p>
-        Låt dina smaklökar kittlas av utvalda nordiska råvaror i form av burgare
-        eller färs. Helt fri från soja och tillagad i Sverige. Du hittar Aloba i
-        frysdisken i välsorterade matbutiker. 100% plantbaserat. Och riktigt
-        gott.
-      </p>
-      <button onClick={() => history.push("/products")} className="link-button">
-        Våra produkter
-      </button>
-    </div>
-  );
-};
-
-const ProductsContainer: React.FC = () => (
+const ProductsContainer: React.FC<{ title: string }> = ({ title }) => (
   <div className="products container">
-    <h1>Våra produkter</h1>
+    <h1 className="header">{title}</h1>
     <Products />
   </div>
 );
 
-const Story: React.FC = () => {
-  const history = useHistory();
-  return (
-    <div className="story container">
-      <h2>Om oss och vår filosofi</h2>
-      <p>
-        Hållbart och hälsosamt, plantbaserade nordiska råvaror från hav och land
-        – och framförallt en matupplevelse utöver det vanliga. Det var ledorden
-        när vi började att utveckla Aloba i slutet av 2019.
-      </p>
-      <button onClick={() => history.push("/about")} className="link-button">
-        Om oss
-      </button>
-    </div>
-  );
-};
+const HomePage = () => {
+  const { complete, data } = useFetch({ page: PAGE.HOME });
 
-const Home = () => {
-  const { complete, data } = useFetch("home");
+  if (!data || !complete) {
+    return null;
+  }
+
+  const {
+    carousel: carouselItems,
+    whatIsAloba,
+    ourProducts,
+    imageDividerFirst,
+    imageDividerSecond,
+    aboutUs,
+  } = data as Home;
 
   return (
     <div className="home">
       <Navbar />
-      <CarouselIntro />
-      <What />
-      <img className="image-divider" src={Salad} alt="divider" />
-      <ProductsContainer />
-      <img className="image-divider" src={FoodTruckHeroes} alt="divider" />
-      <Story />
+      {carouselItems && <CarouselIntro carouselItems={carouselItems} />}
+      <What
+        title={whatIsAloba?.title}
+        subTitle={whatIsAloba?.subTitle}
+        text={whatIsAloba?.text}
+      />
+      {imageDividerFirst && (
+        <img
+          className="image-divider"
+          src={imageDividerFirst.imageUrl}
+          alt="divider"
+        />
+      )}
+      <ProductsContainer title={ourProducts?.title || ''} />
+      {imageDividerSecond && (
+        <img
+          className="image-divider"
+          src={imageDividerSecond.imageUrl}
+          alt="divider"
+        />
+      )}
+      <About title={aboutUs?.title} text={aboutUs?.text} />
       <CarouselRecipe />
       <Leaf className="icon-divider" />
       <Footer />
@@ -73,4 +67,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

@@ -5,6 +5,7 @@ import Recipe from "./Recipe/Recipe";
 import Recipes from "./Recipes/Recipes";
 import What from "./What/What";
 import Faq from "./Faq/Faq";
+import PAGE from "./pageNames";
 import Product from "./Product/Product";
 import Products from "./Products/Products";
 import Stores from "./Stores/Stores";
@@ -19,5 +20,6 @@ export {
     Product,
     Products,
     Contact,
-    Stores
+    Stores,
+    PAGE
   }

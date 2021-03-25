@@ -5,18 +5,19 @@
   justify-content: flex-end;
   transition: 0.5s;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: 9999;
   right: -100vw;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.5);
+
+  .side-margin {
+    padding-left: $side-margin;
+    padding-right: $side-margin;
+  }
 
   .sidebar {
     background-color: $classic-blue;
     width: 75vw;
-    padding-left: $side-margin;
-    padding-right: $side-margin;
 
     .sidebar-navigation {
       display: flex;
@@ -58,6 +59,12 @@
 
   &.open {
     right: 0;
+
+    .sidebar-background {
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9998;
+    }
   }
 }
 

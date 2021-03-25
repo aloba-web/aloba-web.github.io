@@ -3,26 +3,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.scss";
-import Hero from "../../../assets/aloba-table-filter-desktop.jpg";
-import Ocean from "../../../assets/ocean-desktop.jpg";
-import Oats from "../../../assets/oat-desktop.jpg";
+import { CarouselItem } from "../../../hooks/fetch/fetchTypes";
 
-const carouselItems: Array<{ backgroundImage: string; text: string }> = [
-  {
-    backgroundImage: Ocean,
-    text: "Alger från de kalla och rena haven utanför Trondheim i Norge",
-  },
-  {
-    backgroundImage: Oats,
-    text: "100% plantbaserat med bland annat svenskt havre, korn och quinoa",
-  },
-  {
-    backgroundImage: Hero,
-    text: "Äntligen! Nu lanserar vi Aloba",
-  },
-];
+export interface CarouselIntroProps {
+  carouselItems: Array<CarouselItem>;
+}
 
-const Carousel: React.FC = () => {
+const Carousel: React.FC<CarouselIntroProps> = ({ carouselItems }) => {
   var settings = {
     autoplay: true,
     arrows: false,
@@ -32,6 +19,7 @@ const Carousel: React.FC = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
   return (
     <Slider className="carousel" {...settings}>
       {carouselItems.map((item, index) => (
@@ -40,7 +28,7 @@ const Carousel: React.FC = () => {
             className="carousel-item"
             style={{
               backgroundPosition: "bottom",
-              backgroundImage: `url(${item.backgroundImage})`,
+              backgroundImage: `url(${item.imageUrl})`,
             }}
           >
             <span className="text" style={{ fontWeight: "bold" }}>

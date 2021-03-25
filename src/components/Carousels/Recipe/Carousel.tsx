@@ -5,9 +5,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.scss";
 import Card from "../../Card";
-import { recipes } from "../../../pages/Recipes/recipesMock";
+import useFetch, { POST_TYPE } from "../../../hooks/fetch/useFetch";
+import { Recipe } from "../../../hooks/fetch/fetchTypes";
 
 const Carousel: React.FC = () => {
+  const { complete, data } = useFetch({ postType: POST_TYPE.RECIPES });
   let dragging = false;
   const settings = {
     autoplay: true,
@@ -47,6 +49,10 @@ const Carousel: React.FC = () => {
   const onSlideClick = (path: string) => {
     history.push(path);
   };
+
+  if (!complete || !data) return <></>;
+
+  const recipes = data as Array<Recipe>;
 
   return (
     <Slider className="recipe-carousel" {...settings}>

@@ -14,14 +14,15 @@ export interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ open, toggleState }) => {
   return (
     <div className={`sidebar-container ${open ? "open" : ""}`}>
+      <div className="sidebar-background" onClick={toggleState} />
       <div className="sidebar">
-        <div className="sidebar-navigation">
+        <div className="sidebar-navigation side-margin">
           <AlobaLogo />
           <button className="sidebar-close" onClick={toggleState}>
             <Close />
           </button>
         </div>
-        <div className="sidebar-menu-items">
+        <div className="sidebar-menu-items side-margin">
           <Link to="/">Hem</Link>
           <Link to="/products">Produkter</Link>
           <Link to="/stores">Butiker</Link>
@@ -30,7 +31,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, toggleState }) => {
           <Link to="/faq">Frågor & svar</Link>
           <Link to="/contact">Kontakt</Link>
         </div>
-        <div className="social-media">
+        <div className="social-media side-margin">
           <a
             target="_blank"
             rel="noreferrer"

@@ -2,56 +2,33 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import useFetch from "../../hooks/fetch/useFetch";
+import { Contact } from "../../hooks/fetch/fetchTypes";
+import PAGE from "../pageNames";
 import "./Contact.scss";
+import { createMarkup } from "../../utils/utils";
 
 const Products: React.FC = () => {
   const history = useHistory();
+  const { complete, data } = useFetch({ page: PAGE.CONTACT });
+
+  if (!complete || !data) return <></>;
+  const { title, text, qna } = data as Contact;
   return (
     <>
       <Navbar />
       <div className="contact">
         <div className="contact-info-text-wrapper">
-          <h1>Kontakt</h1>
-          <div className="header">
-            <p>
-              Vi vill höra vad du tycker! Du kan alltid nå oss med frågor eller
-              feedback på
-            </p>
-            <p>
-              <a
-                style={{ fontWeight: "bold" }}
-                href="mailto:info@alobafoods.com"
-              >
-                info@alobafoods.com
-              </a>
-            </p>
-          </div>
-          <div className="contact-info">
-            <p>Butikskontakt:</p>
-            <p>Malin Lind - Sales Manager, Stockholm</p>
-            <p>
-              <a
-                style={{ fontWeight: "bold" }}
-                href="mailto:malin@alobafoods.com"
-              >
-                malin@alobafoods.com
-              </a>
-            </p>
-            <p>
-              <a style={{ fontWeight: "bold" }} href="tel:0721521418">
-                0721 52 14 18
-              </a>
-            </p>
-          </div>
+          <h1>{title}</h1>
+          <div
+            className="header"
+            dangerouslySetInnerHTML={createMarkup(text || "")}
+          />
         </div>
         <div className="qna">
           <div className="container">
-            <h2>Frågor & svar</h2>
-            <p>
-              Här har vi samlat frågor och svar. Hittar du inte svaret på din
-              fråga, maila oss gärna så ska vi göra vårt bästa för att svara på
-              dina frågor.
-            </p>
+            <h2>{qna?.title}</h2>
+            <p dangerouslySetInnerHTML={createMarkup(qna?.ingress || "")} />
             <button
               onClick={() => history.push("/faq")}
               className="link-button"
