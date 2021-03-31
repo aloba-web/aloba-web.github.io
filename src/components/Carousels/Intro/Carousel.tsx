@@ -31,9 +31,7 @@ const Carousel: React.FC<CarouselIntroProps> = ({ carouselItems }) => {
               backgroundImage: `url(${item.imageUrl})`,
             }}
           >
-            <span className="text" style={{ fontWeight: "bold" }}>
-              {item.text}
-            </span>
+            <span className="text">{item.text}</span>
           </div>
         </div>
       ))}

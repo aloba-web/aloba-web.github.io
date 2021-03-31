@@ -14,7 +14,7 @@ const Card: React.FC<CardProps> = ({ img, title, text, alt }) => {
       <div className="image" style={{ backgroundImage: `url(${img})` }}></div>
       {/* <img src={img} alt={alt} /> */}
       <div className="text-container">
-        <h3>{title}</h3>
+        <h2>{title}</h2>
         {text && <p>{text}</p>}
       </div>
     </div>

@@ -6,7 +6,8 @@
   align-items: center;
 
   .about-text {
-    padding: 0 32px;
+    padding: 0 $spacing-m;
+    margin: $spacing-m auto;
   }
   img.image-divider {
     max-height: 500px;

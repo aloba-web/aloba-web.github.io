@@ -20,20 +20,28 @@ const Footer: React.FC<FooterProps> = () => {
     <div className="footer-container">
       <div className="footer-left">
         {links.map((link, index) => (
-          <Link key={index} to={link.path}>{link.label}</Link>
+          <Link key={index} to={link.path}>
+            {link.label}
+          </Link>
         ))}
       </div>
       <div className="footer-right">
         <AlobaLogoNegative />
         <div className="social-media-icons">
           <a
+            aria-label="instagram"
             target="_blank"
             rel="noreferrer"
             href="https://www.instagram.com/alobafoods/"
           >
             <InstagramLogoNegative />
           </a>
-          <a target="_blank" rel="noreferrer" href="https://www.facebook.com/alobafoods">
+          <a
+            aria-label="facebook"
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.facebook.com/alobafoods"
+          >
             <FacebookLogoNegative />
           </a>
         </div>

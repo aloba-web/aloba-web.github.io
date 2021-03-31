@@ -1,6 +1,11 @@
 @import "../../variables.scss";
 
 .products {
+  margin-top: $navbar-height;
+
+  .container {
+    max-width: 900px;
+  }
   .header {
     text-align: center;
     padding-bottom: 32px;

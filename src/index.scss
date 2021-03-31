@@ -40,7 +40,8 @@ code {
 }
 
 .container {
-  margin: 8vw auto;
+  margin: auto;
+  padding: $page-container-margin;
   max-width: 600px;
 }
 

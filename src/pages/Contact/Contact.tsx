@@ -1,22 +1,21 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
 import useFetch from "../../hooks/fetch/useFetch";
 import { Contact } from "../../hooks/fetch/fetchTypes";
 import PAGE from "../pageNames";
-import "./Contact.scss";
 import { createMarkup } from "../../utils/utils";
+import PageWrapper from "../PageWrapper";
+import { ReactComponent as Spinner } from "../../assets/spinner.svg";
+import "./Contact.scss";
 
 const Products: React.FC = () => {
   const history = useHistory();
   const { complete, data } = useFetch({ page: PAGE.CONTACT });
 
-  if (!complete || !data) return <></>;
+  if (!complete || !data) return <Spinner />;
   const { title, text, qna } = data as Contact;
   return (
-    <>
-      <Navbar />
+    <PageWrapper>
       <div className="contact">
         <div className="contact-info-text-wrapper">
           <h1>{title}</h1>
@@ -38,8 +37,7 @@ const Products: React.FC = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </>
+    </PageWrapper>
   );
 };
 

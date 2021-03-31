@@ -2,8 +2,13 @@
 
 .navbar {
   align-items: center;
-  background-color: $classic-blue;
+  background-color: rgba($color: $classic-blue, $alpha: 0.85);
+  box-sizing: border-box;
   display: flex;
+  height: $navbar-height;
   justify-content: space-between;
-  padding: 8px $side-margin;
+  padding: 8px $spacing-m;
+  position: absolute;
+  width: 100%;
+  z-index: 999;
 }

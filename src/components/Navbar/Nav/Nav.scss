@@ -1,0 +1,24 @@
+@import "../../../variables.scss";
+
+.nav {
+  display: flex;
+  align-items: center;
+  height: $navbar-height;
+  padding-left: 32px;
+  .items {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+    grid-gap: 5vw;
+    a {
+      color: white;
+      font-size: 20px;
+    }
+  }
+}
+
+.nav-item {
+  &.active {
+    font-weight: bold;
+  }
+}

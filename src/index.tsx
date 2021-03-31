@@ -1,36 +1,38 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 import ScrollToTop from "./utils/ScrollToTop";
-import {
-  About,
-  Contact,
-  Faq,
-  Home,
-  Product,
-  Products,
-  Recipe,
-  Recipes,
-  Stores,
-} from "./pages";
+import { ReactComponent as Spinner} from "./assets/spinner.svg";
+import "./index.scss";
+
+const About = lazy(() => import("./pages/About/About"));
+const Contact = lazy(() => import("./pages/Contact/Contact"));
+const Faq = lazy(() => import("./pages/Faq/Faq"));
+const Home = lazy(() => import("./pages/Home/Home"));
+const Product = lazy(() => import("./pages/Product/Product"));
+const Products = lazy(() => import("./pages/Products/Products"));
+const Recipe = lazy(() => import("./pages/Recipe/Recipe"));
+const Recipes = lazy(() => import("./pages/Recipes/Recipes"));
+const Stores = lazy(() => import("./pages/Stores/Stores"));
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <ScrollToTop />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/contact" component={Contact} />
-        <Route exact path="/faq" component={Faq} />
-        <Route exact path="/products" component={Products} />
-        <Route exact path="/products/:id" component={Product} />
-        <Route exact path="/stores" component={Stores} />
-        <Route exact path="/recipes" component={Recipes} />
-        <Route exact path="/recipes/:id" component={Recipe} />
-      </Switch>
+      <Suspense fallback={<Spinner />}>
+        <ScrollToTop />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/faq" component={Faq} />
+          <Route exact path="/products" component={Products} />
+          <Route exact path="/products/:id" component={Product} />
+          <Route exact path="/stores" component={Stores} />
+          <Route exact path="/recipes" component={Recipes} />
+          <Route exact path="/recipes/:id" component={Recipe} />
+        </Switch>
+      </Suspense>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

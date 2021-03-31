@@ -1,19 +1,19 @@
 import React from "react";
-import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
 import { QnA } from "../../hooks/fetch/fetchTypes";
 import useFetch, { POST_TYPE } from "../../hooks/fetch/useFetch";
 import { createMarkup } from "../../utils/utils";
 import PAGE from "../pageNames";
 import { QnAPage } from "../../hooks/fetch/fetchTypes";
+import { ReactComponent as Spinner } from "../../assets/spinner.svg";
 import "./Faq.scss";
+import PageWrapper from "../PageWrapper";
 
 const Questions: React.FC = () => {
   const { complete, data } = useFetch({
     postType: POST_TYPE.QNA,
     filter: "[orderby]=date&order=asc",
   });
-  if (!complete || !data) return <></>;
+  if (!complete || !data) return <Spinner />;
   const questionsAndAnswers = data as Array<QnA>;
 
   return (
@@ -30,12 +30,11 @@ const Questions: React.FC = () => {
 
 const What: React.FC = () => {
   const { complete, data } = useFetch({ page: PAGE.QNA });
-  if (!complete || !data) return <></>;
+  if (!complete || !data) return <Spinner />;
   const { title, ingress } = data as QnAPage;
 
   return (
-    <>
-      <Navbar />
+    <PageWrapper>
       <div className="faq container">
         <div className="header-container">
           <h1>{title}</h1>
@@ -43,8 +42,7 @@ const What: React.FC = () => {
         </div>
         <Questions />
       </div>
-      <Footer />
-    </>
+    </PageWrapper>
   );
 };
 

@@ -2,8 +2,6 @@ import React from "react";
 
 import "./Home.scss";
 import { CarouselIntro, CarouselRecipe } from "../../components/Carousels";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 import Products from "../../components/ProductsCards";
 import { ReactComponent as Leaf } from "../../assets/leaf.svg";
 import useFetch from "../../hooks/fetch/useFetch";
@@ -11,9 +9,10 @@ import { PAGE } from "..";
 import About from "./About";
 import What from "./What";
 import { Home } from "../../hooks/fetch/fetchTypes";
+import PageWrapper from "../PageWrapper";
 
 const ProductsContainer: React.FC<{ title: string }> = ({ title }) => (
-  <div className="products container">
+  <div className="products-home container">
     <h1 className="header">{title}</h1>
     <Products />
   </div>
@@ -36,34 +35,34 @@ const HomePage = () => {
   } = data as Home;
 
   return (
-    <div className="home">
-      <Navbar />
-      {carouselItems && <CarouselIntro carouselItems={carouselItems} />}
-      <What
-        title={whatIsAloba?.title}
-        subTitle={whatIsAloba?.subTitle}
-        text={whatIsAloba?.text}
-      />
-      {imageDividerFirst && (
-        <img
-          className="image-divider"
-          src={imageDividerFirst.imageUrl}
-          alt="divider"
+    <PageWrapper>
+      <div className="home">
+        {carouselItems && <CarouselIntro carouselItems={carouselItems} />}
+        <What
+          title={whatIsAloba?.title}
+          subTitle={whatIsAloba?.subTitle}
+          text={whatIsAloba?.text}
         />
-      )}
-      <ProductsContainer title={ourProducts?.title || ''} />
-      {imageDividerSecond && (
-        <img
-          className="image-divider"
-          src={imageDividerSecond.imageUrl}
-          alt="divider"
-        />
-      )}
-      <About title={aboutUs?.title} text={aboutUs?.text} />
-      <CarouselRecipe />
-      <Leaf className="icon-divider" />
-      <Footer />
-    </div>
+        {imageDividerFirst && (
+          <img
+            className="image-divider"
+            src={imageDividerFirst.imageUrl}
+            alt="divider"
+          />
+        )}
+        <ProductsContainer title={ourProducts?.title || ""} />
+        {imageDividerSecond && (
+          <img
+            className="image-divider"
+            src={imageDividerSecond.imageUrl}
+            alt="divider"
+          />
+        )}
+        <About title={aboutUs?.title} text={aboutUs?.text} />
+        <CarouselRecipe />
+        <Leaf className="icon-divider" />
+      </div>
+    </PageWrapper>
   );
 };
 

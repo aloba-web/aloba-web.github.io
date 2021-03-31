@@ -1,11 +1,11 @@
 import React from "react";
-import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
 import { useParams } from "react-router-dom";
 import useFetch, { POST_TYPE } from "../../hooks/fetch/useFetch";
 import { Product } from "../../hooks/fetch/fetchTypes";
 import { createMarkup } from "../../utils/utils";
+import { ReactComponent as Spinner } from "../../assets/spinner.svg";
 import "./Product.scss";
+import PageWrapper from "../PageWrapper";
 
 interface RouteParams {
   id: string;
@@ -53,13 +53,12 @@ const Products: React.FC = () => {
     slug: id,
   });
 
-  if (!complete || !data) return <></>;
+  if (!complete || !data) return <Spinner />;
 
   const [product] = data as Array<Product>;
 
   return (
-    <>
-      <Navbar />
+    <PageWrapper>
       <div className="product">
         <img src={product?.image} alt="aloba products" />
         <div className="container">
@@ -84,8 +83,7 @@ const Products: React.FC = () => {
         </div>
         {product && getNutritions(product)}
       </div>
-      <Footer />
-    </>
+    </PageWrapper>
   );
 };
 

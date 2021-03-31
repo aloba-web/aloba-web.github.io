@@ -1,12 +1,12 @@
 import React from "react";
-import Footer from "../../components/Footer";
 import ProductsCards from "../../components/ProductsCards";
-import Navbar from "../../components/Navbar";
 import useFetch from "../../hooks/fetch/useFetch";
 import { ProductsPage } from "../../hooks/fetch/fetchTypes";
 import PAGE from "../pageNames";
 import { createMarkup } from "../../utils/utils";
+import { ReactComponent as Spinner } from "../../assets/spinner.svg";
 import "./Products.scss";
+import PageWrapper from "../PageWrapper";
 
 export interface Product {
   amount: string;
@@ -33,13 +33,12 @@ const ProductsContainer: React.FC<ProductsPage> = ({ title, ingress }) => (
 const Products: React.FC = () => {
   const { complete, data } = useFetch({ page: PAGE.PRODUCTS });
 
-  if (!complete || !data) return <></>;
+  if (!complete || !data) return <Spinner />;
 
   const productsPageData = data as ProductsPage;
 
   return (
-    <>
-      <Navbar />
+    <PageWrapper>
       <div className="products">
         <ProductsContainer {...productsPageData} />
       </div>
@@ -53,8 +52,7 @@ const Products: React.FC = () => {
           />
         </div>
       </div>
-      <Footer />
-    </>
+    </PageWrapper>
   );
 };
 

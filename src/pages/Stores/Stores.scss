@@ -4,9 +4,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-top: $navbar-height;
+  margin-top: $page-container-margin;
+  margin-bottom: $page-container-margin;
 
   .header {
-    margin: 32px;
+    margin: 0 32px 32px 32px;
     .title {
       margin: 0;
     }

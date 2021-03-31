@@ -1,11 +1,11 @@
 import React from "react";
-import Footer from "../../components/Footer";
 import Map from "../../components/Map";
-import Navbar from "../../components/Navbar";
 import { Store, StoresPage } from "../../hooks/fetch/fetchTypes";
 import useFetch, { POST_TYPE } from "../../hooks/fetch/useFetch";
 import PAGE from "../pageNames";
+import { ReactComponent as Spinner } from "../../assets/spinner.svg";
 import "./Stores.scss";
+import PageWrapper from "../PageWrapper";
 
 const getStores = (stores: Array<Store>) => (
   <div className="store-list">
@@ -26,14 +26,14 @@ const Stores: React.FC = () => {
   });
   const { complete, data } = useFetch({ page: PAGE.STORES });
 
-  if (!complete || !data || !storesComplete || !fetchedStoresData) return <></>;
+  if (!complete || !data || !storesComplete || !fetchedStoresData)
+    return <Spinner />;
 
   const storesData = fetchedStoresData as Array<Store>;
   const storesPage = data as StoresPage;
 
   return (
-    <>
-      <Navbar />
+    <PageWrapper>
       <div className="stores">
         <div className="header">
           <h1 className="title">{storesPage.title}</h1>
@@ -46,8 +46,7 @@ const Stores: React.FC = () => {
           {getStores(storesData)}
         </div>
       </div>
-      <Footer />
-    </>
+    </PageWrapper>
   );
 };
 

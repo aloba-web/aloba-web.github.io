@@ -1,13 +1,13 @@
 @import "../../variables.scss";
 
 .recipes {
-  margin-bottom: $side-margin;
+  margin: $page-container-margin 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   .head {
     text-align: center;
-    padding: $side-margin;
+    padding: $navbar-height $spacing-m $spacing-m $spacing-m;
     max-width: 600px;
   }
 

@@ -1,11 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
 import useFetch, { POST_TYPE } from "../../hooks/fetch/useFetch";
 import { Recipe } from "../../hooks/fetch/fetchTypes";
 import { createMarkup } from "../../utils/utils";
+import { ReactComponent as Spinner } from "../../assets/spinner.svg";
 import "./Recipe.scss";
+import PageWrapper from "../PageWrapper";
 
 interface RouteParams {
   id: string;
@@ -27,16 +27,15 @@ const RecipePage: React.FC = () => {
     slug: id,
   });
 
-  if (!complete && !data) return <></>;
+  if (!complete && !data) return <Spinner />;
 
   const [{ image, title, ingress, ingredients, directions }] = data as Recipe[];
 
   return (
-    <>
-      <Navbar />
+    <PageWrapper>
       <div className="recipe">
         <img className="image-header" src={image} alt="divider" />
-        <div className="content-wrapper">
+        <div className="content-wrapper container">
           <div>
             <h1>{title}</h1>
             <p dangerouslySetInnerHTML={createMarkup(ingress)} />
@@ -51,8 +50,7 @@ const RecipePage: React.FC = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </>
+    </PageWrapper>
   );
 };
 

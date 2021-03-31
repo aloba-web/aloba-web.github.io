@@ -18,7 +18,11 @@ const Sidebar: React.FC<SidebarProps> = ({ open, toggleState }) => {
       <div className="sidebar">
         <div className="sidebar-navigation side-margin">
           <AlobaLogo />
-          <button className="sidebar-close" onClick={toggleState}>
+          <button
+            aria-label="close sidebar"
+            className="sidebar-close"
+            onClick={toggleState}
+          >
             <Close />
           </button>
         </div>
@@ -33,6 +37,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, toggleState }) => {
         </div>
         <div className="social-media side-margin">
           <a
+            aria-label="instagram"
             target="_blank"
             rel="noreferrer"
             href="https://www.instagram.com/alobafoods/"
@@ -40,6 +45,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, toggleState }) => {
             <InstagramLogo />
           </a>
           <a
+            aria-label="facebook"
             target="_blank"
             rel="noreferrer"
             href="https://www.facebook.com/alobafoods"

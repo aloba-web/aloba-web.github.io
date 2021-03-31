@@ -1,18 +1,18 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
-import "./Recipes.scss";
 import Card from "../../components/Card";
 import { Link } from "react-router-dom";
-import Footer from "../../components/Footer";
 import useFetch, { POST_TYPE } from "../../hooks/fetch/useFetch";
 import PAGE from "../pageNames";
 import { Recipe, RecipesPage } from "../../hooks/fetch/fetchTypes";
 import { createMarkup } from "../../utils/utils";
+import { ReactComponent as Spinner } from "../../assets/spinner.svg";
+import "./Recipes.scss";
+import PageWrapper from "../PageWrapper";
 
 const Recipes: React.FC = () => {
   const { complete, data } = useFetch({ postType: POST_TYPE.RECIPES });
 
-  if (!complete || !data) return <></>;
+  if (!complete || !data) return <Spinner />;
 
   const recipes = data as Array<Recipe>;
 
@@ -30,12 +30,11 @@ const Recipes: React.FC = () => {
 const RecipesPageComponent: React.FC = () => {
   const { complete, data } = useFetch({ page: PAGE.RECIPES });
 
-  if (!complete || !data) return <></>;
+  if (!complete || !data) return <Spinner />;
   const { title, ingress } = data as RecipesPage;
 
   return (
-    <>
-      <Navbar />
+    <PageWrapper>
       <div className="recipes">
         <div className="head">
           <h1>{title}</h1>
@@ -43,8 +42,7 @@ const RecipesPageComponent: React.FC = () => {
         </div>
         <Recipes />
       </div>
-      <Footer />
-    </>
+    </PageWrapper>
   );
 };
 

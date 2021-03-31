@@ -3,16 +3,17 @@ import { useHistory } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./Carousel.scss";
 import Card from "../../Card";
 import useFetch, { POST_TYPE } from "../../../hooks/fetch/useFetch";
 import { Recipe } from "../../../hooks/fetch/fetchTypes";
+import { ReactComponent as Spinner} from "../../../assets/spinner.svg";
+import "./Carousel.scss";
 
 const Carousel: React.FC = () => {
   const { complete, data } = useFetch({ postType: POST_TYPE.RECIPES });
   let dragging = false;
   const settings = {
-    autoplay: true,
+    autoplay: false,
     arrows: true,
     afterChange: () => (dragging = false),
     beforeChange: () => (dragging = true),
@@ -23,7 +24,7 @@ const Carousel: React.FC = () => {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 575,
+        breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -50,7 +51,7 @@ const Carousel: React.FC = () => {
     history.push(path);
   };
 
-  if (!complete || !data) return <></>;
+  if (!complete || !data) return <Spinner />;
 
   const recipes = data as Array<Recipe>;
 
