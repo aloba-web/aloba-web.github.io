@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import CookiePolicy from "./components/CookiePolicy";
 import ScrollToTop from "./utils/ScrollToTop";
 import { ReactComponent as Spinner} from "./assets/spinner.svg";
 import "./index.scss";
@@ -34,6 +35,7 @@ ReactDOM.render(
         </Switch>
       </Suspense>
     </Router>
+    <CookiePolicy />
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -7,6 +7,7 @@ import { createMarkup } from "../../utils/utils";
 import PageWrapper from "../PageWrapper";
 import { ReactComponent as Spinner } from "../../assets/spinner.svg";
 import "./Contact.scss";
+import Button from "../../components/Button";
 
 const Products: React.FC = () => {
   const history = useHistory();
@@ -28,12 +29,9 @@ const Products: React.FC = () => {
           <div className="container">
             <h2>{qna?.title}</h2>
             <p dangerouslySetInnerHTML={createMarkup(qna?.ingress || "")} />
-            <button
-              onClick={() => history.push("/faq")}
-              className="link-button"
-            >
+            <Button buttonType="secondary" onClick={() => history.push("/faq")}>
               Läs mer här
-            </button>
+            </Button>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import Button from "../../components/Button";
 import { AboutUs } from "../../hooks/fetch/fetchTypes";
 
 const About: React.FC<AboutUs> = ({ title, text }) => {
@@ -8,9 +9,9 @@ const About: React.FC<AboutUs> = ({ title, text }) => {
     <div className="story container">
       {title && <h2>{title}</h2>}
       {text && <p>{text}</p>}
-      <button onClick={() => history.push("/about")} className="link-button">
+      <Button buttonType={"primary"} onClick={() => history.push("/about")}>
         Om oss
-      </button>
+      </Button>
     </div>
   );
 };

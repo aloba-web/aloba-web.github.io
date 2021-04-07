@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+
+.cookie-policy {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: -1px;
+  padding: $spacing-s;
+  width: 100%;
+  background-color: rgba($color: $classic-blue, $alpha: 0.85);
+  z-index: 9999;
+
+  .button-wrapper {
+    display: flex;
+    grid-auto-flow: column;
+    grid-gap: $spacing-s;
+    justify-content: flex-end;
+  }
+
+  .cookie-container {
+      margin: auto;
+      max-width: 900px;
+  }
+
+  p {
+    color: white;
+  }
+}

@@ -9,7 +9,7 @@
   }
 
   .header {
-    margin-bottom: 32px;
+    margin-bottom: $spacing-m;
   }
 
   .qna {
@@ -18,28 +18,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 300px;
-    padding: 0 64px;
+    padding: 0 $spacing-l;
 
-    button.link-button {
-      background-color: white;
-      border: none;
-      color: $classic-blue;
-      font-weight: 600;
-      margin-top: 32px;
-      padding: 8px 16px;
+    .container {
+      display: grid;
+      grid-gap: $spacing-s;
+      justify-items: center;
     }
 
     h2,
     p {
       color: white;
+      margin: 0;
     }
   }
 
   h1 {
-    margin-bottom: 64px;
-  }
-  p {
-    margin: 0;
+    margin-bottom: $spacing-l;
   }
 }
