@@ -14,35 +14,82 @@ interface RouteParams {
 const getNutritions: React.FC<Product> = (product: Product) => (
   <div className="nutritions-container">
     <div className="nutritions-wrapper">
-      <div className="nutritions-name">
-        <p style={{ fontWeight: "bold" }}>Näringsvärden</p>
-        <p>Energi</p>
-        <p>Fett</p>
-        <p> varav mättat fett</p>
-        <p> varav enkelomättat fett</p>
-        <p> varav fleromättat fett</p>
-        <p>Kolhydrater</p>
-        <p>Sockerarter</p>
-        <p>Fiber</p>
-        <p>Protein</p>
-        <p>Salt</p>
-      </div>
-      <div className="nutritions-divider"></div>
-      <div className="nutritions-amount">
-        <p style={{ fontWeight: "bold" }}>per 100 g</p>
-        <p>{product.nutritions.energy}</p>
-        <p>{product.nutritions?.fat?.fat}</p>
-        <p>{product.nutritions?.fat?.ofWhich?.saturatedFat}</p>
-        <p>{product.nutritions?.fat?.ofWhich?.monounsaturatedFat}</p>
-        <p>{product.nutritions?.fat?.ofWhich?.polyunsaturatedFat}</p>
-        <p>{product.nutritions?.carbohydrates}</p>
-        <p>{product.nutritions?.sugars}</p>
-        <p>{product.nutritions?.fiber}</p>
-        <p>{product.nutritions?.protein}</p>
-        <p>{product.nutritions?.salt}</p>
-      </div>
+      <table>
+        <tr>
+          <th>Näringsvärden</th>
+          <th>per 100 g</th>
+        </tr>
+        <tr>
+          <td>Energi</td>
+          <td
+            dangerouslySetInnerHTML={createMarkup(product.nutritions.energy)}
+          />
+        </tr>
+        <tr>
+          <td>Fett</td>
+          <td
+            dangerouslySetInnerHTML={createMarkup(product.nutritions.fat.fat)}
+          />
+        </tr>
+        <tr>
+          <td className="indent">varav mättat fett</td>
+          <td
+            dangerouslySetInnerHTML={createMarkup(
+              product.nutritions.fat.ofWhich.saturatedFat
+            )}
+          />
+        </tr>
+        <tr>
+          <td className="indent">varav enkelomättat fett</td>
+          <td
+            dangerouslySetInnerHTML={createMarkup(
+              product.nutritions.fat.ofWhich.monounsaturatedFat
+            )}
+          />
+        </tr>
+        <tr>
+          <td className="indent">varav fleromättat fett</td>
+          <td
+            dangerouslySetInnerHTML={createMarkup(
+              product.nutritions.fat.ofWhich.polyunsaturatedFat
+            )}
+          />
+        </tr>
+        <tr>
+          <td>Kolhydrater</td>
+          <td
+            dangerouslySetInnerHTML={createMarkup(
+              product.nutritions.carbohydrates
+            )}
+          />
+        </tr>
+        <tr>
+          <td>Sockerarter</td>
+          <td
+            dangerouslySetInnerHTML={createMarkup(product.nutritions.sugars)}
+          />
+        </tr>
+        <tr>
+          <td>Fiber</td>
+          <td
+            dangerouslySetInnerHTML={createMarkup(product.nutritions.fiber)}
+          />
+        </tr>
+        <tr>
+          <td>Protein</td>
+          <td
+            dangerouslySetInnerHTML={createMarkup(product.nutritions.protein)}
+          />
+        </tr>
+        <tr>
+          <td>Salt</td>
+          <td dangerouslySetInnerHTML={createMarkup(product.nutritions.salt)} />
+        </tr>
+      </table>
     </div>
-    <p className="disclaimer">{product.nutritions?.rdiDisclaimer}</p>
+    <span
+      dangerouslySetInnerHTML={createMarkup(product.nutritions?.rdiDisclaimer)}
+    />
   </div>
 );
 
@@ -63,19 +110,23 @@ const Products: React.FC = () => {
         <img src={product?.image} alt="aloba products" />
         <div className="container">
           <div className="header">
-            <h1>{product?.title}</h1>
-            <span className="sub-header">{product?.subtitle}</span>
+            <span dangerouslySetInnerHTML={createMarkup(product?.title)} />
+            <span dangerouslySetInnerHTML={createMarkup(product?.subtitle)} />
           </div>
           <div className="section-wrapper">
             <div className="section">
-              <span className="sub-title">{product.keeping?.title}</span>
-              <p
+              <span
+                dangerouslySetInnerHTML={createMarkup(product.keeping?.title)}
+              />
+              <span
                 dangerouslySetInnerHTML={createMarkup(product.keeping?.text)}
               />
             </div>
             <div className="section">
-              <span className="sub-title">{product.contains?.title}</span>
-              <p
+              <span
+                dangerouslySetInnerHTML={createMarkup(product.contains?.title)}
+              />
+              <span
                 dangerouslySetInnerHTML={createMarkup(product.contains?.text)}
               />
             </div>

@@ -10,10 +10,11 @@ import About from "./About";
 import What from "./What";
 import { Home } from "../../hooks/fetch/fetchTypes";
 import PageWrapper from "../PageWrapper";
+import { createMarkup } from "../../utils/utils";
 
 const ProductsContainer: React.FC<{ title: string }> = ({ title }) => (
   <div className="products-home container">
-    <h1 className="header">{title}</h1>
+    <span dangerouslySetInnerHTML={createMarkup(title)} />
     <Products />
   </div>
 );

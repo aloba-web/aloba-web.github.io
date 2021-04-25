@@ -8,7 +8,7 @@ interface Coordinates {
 }
 
 export interface CarouselItem extends ImageUrl {
-  text: string;
+  text?: string;
 }
 
 export interface WhatIsAloba {

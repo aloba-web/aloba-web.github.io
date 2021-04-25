@@ -3,6 +3,7 @@ import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Store } from "../../hooks/fetch/fetchTypes";
 import useWindowSize from "../../hooks/useWindowSize";
+import { createMarkup } from "../../utils/utils";
 import "./Map.scss";
 
 export interface MapProps {
@@ -19,13 +20,13 @@ const Map: React.FC<MapProps> = ({ stores }) => {
       return (
         <Marker key={url} position={[lat, lng]}>
           <Popup>
-            <b>{storeName}</b>
-            <br />
-            {address}
-            <br />
-            <a target="_blank" rel="noreferrer" href={url}>
-              Hitta hit
-            </a>
+            <div className="popup-content-wrapper">
+              <span dangerouslySetInnerHTML={createMarkup(storeName)} />
+              <span dangerouslySetInnerHTML={createMarkup(address)} />
+              <a target="_blank" rel="noreferrer" href={url}>
+                Hitta hit
+              </a>
+            </div>
           </Popup>
         </Marker>
       );
@@ -34,6 +35,7 @@ const Map: React.FC<MapProps> = ({ stores }) => {
 
   return (
     <MapContainer
+      className="map"
       attributionControl={false}
       bounds={bounds}
       boundsOptions={{ padding: [10, 10] }}

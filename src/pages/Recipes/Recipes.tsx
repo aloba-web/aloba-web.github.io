@@ -37,8 +37,8 @@ const RecipesPageComponent: React.FC = () => {
     <PageWrapper>
       <div className="recipes">
         <div className="head">
-          <h1>{title}</h1>
-          <p dangerouslySetInnerHTML={createMarkup(ingress || "")} />
+        <span dangerouslySetInnerHTML={createMarkup(title)} />
+          <span dangerouslySetInnerHTML={createMarkup(ingress)} />
         </div>
         <Recipes />
       </div>

@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.scss";
 import { CarouselItem } from "../../../hooks/fetch/fetchTypes";
+import { createMarkup } from "../../../utils/utils";
 
 export interface CarouselIntroProps {
   carouselItems: Array<CarouselItem>;
@@ -31,7 +32,10 @@ const Carousel: React.FC<CarouselIntroProps> = ({ carouselItems }) => {
               backgroundImage: `url(${item.imageUrl})`,
             }}
           >
-            <span className="text">{item.text}</span>
+            <span
+              dangerouslySetInnerHTML={createMarkup(item?.text)}
+              className="text"
+            />
           </div>
         </div>
       ))}

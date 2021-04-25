@@ -1,3 +1,3 @@
-export const createMarkup = (markup: string) => {
-  return { __html: markup };
+export const createMarkup = (markup?: string) => {
+  return { __html: markup || "" };
 };

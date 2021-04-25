@@ -19,16 +19,19 @@ const Products: React.FC = () => {
     <PageWrapper>
       <div className="contact">
         <div className="contact-info-text-wrapper">
-          <h1>{title}</h1>
-          <div
+          <span
+            dangerouslySetInnerHTML={createMarkup(title)}
+            className="title"
+          />
+          <span
             className="header"
-            dangerouslySetInnerHTML={createMarkup(text || "")}
+            dangerouslySetInnerHTML={createMarkup(text)}
           />
         </div>
         <div className="qna">
           <div className="container">
-            <h2>{qna?.title}</h2>
-            <p dangerouslySetInnerHTML={createMarkup(qna?.ingress || "")} />
+            <span dangerouslySetInnerHTML={createMarkup(qna?.title)} />
+            <span dangerouslySetInnerHTML={createMarkup(qna?.ingress)} />
             <Button buttonType="secondary" onClick={() => history.push("/faq")}>
               Läs mer här
             </Button>

@@ -20,8 +20,8 @@ const Questions: React.FC = () => {
     <div className="questions">
       {questionsAndAnswers.map((question, index) => (
         <div key={index} className="question">
-          <h3>{question.question}</h3>
-          <p dangerouslySetInnerHTML={createMarkup(question.answer || "")} />
+          <span dangerouslySetInnerHTML={createMarkup(question.question)} />
+          <span dangerouslySetInnerHTML={createMarkup(question.answer)} />
         </div>
       ))}
     </div>
@@ -37,8 +37,8 @@ const What: React.FC = () => {
     <PageWrapper>
       <div className="faq container">
         <div className="header-container">
-          <h1>{title}</h1>
-          <p dangerouslySetInnerHTML={createMarkup(ingress || "")} />
+          <span dangerouslySetInnerHTML={createMarkup(title)} />
+          <span dangerouslySetInnerHTML={createMarkup(ingress)} />
         </div>
         <Questions />
       </div>

@@ -7,18 +7,6 @@
     max-height: 500px;
   }
 
-  .what,
-  .story {
-    h2 {
-      font-weight: 500;
-    }
-
-    span {
-      font-size: 28px;
-      font-weight: 900;
-    }
-  }
-
   .products-home {
     &.container {
       max-width: 900px;
@@ -30,10 +18,6 @@
 
   .what {
     text-align: center;
-
-    h2 {
-      font-size: 16px;
-    }
   }
 
   .icon-divider {

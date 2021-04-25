@@ -17,8 +17,8 @@ const AboutPage: React.FC = () => {
       <div className="about">
         <img className="image-divider" src={image} alt="divider" />
         <div className="about-text container">
-          <h1>{title}</h1>
-          <p dangerouslySetInnerHTML={createMarkup(text || "")} />
+          <span dangerouslySetInnerHTML={createMarkup(title)} />
+          <span dangerouslySetInnerHTML={createMarkup(text)} />
         </div>
       </div>
     </PageWrapper>

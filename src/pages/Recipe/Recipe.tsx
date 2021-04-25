@@ -37,16 +37,16 @@ const RecipePage: React.FC = () => {
         <img className="image-header" src={image} alt="divider" />
         <div className="content-wrapper container">
           <div>
-            <h1>{title}</h1>
-            <p dangerouslySetInnerHTML={createMarkup(ingress)} />
+            <span dangerouslySetInnerHTML={createMarkup(title)} />
+            <span dangerouslySetInnerHTML={createMarkup(ingress)} />
           </div>
           <div>
             <h2>Ingredienser</h2>
-            <p dangerouslySetInnerHTML={createMarkup(ingredients)} />
+            <span dangerouslySetInnerHTML={createMarkup(ingredients)} />
           </div>
           <div>
             <h2>Gör så här</h2>
-            <p dangerouslySetInnerHTML={createMarkup(directions)} />
+            <span dangerouslySetInnerHTML={createMarkup(directions)} />
           </div>
         </div>
       </div>

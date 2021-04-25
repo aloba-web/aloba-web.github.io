@@ -23,8 +23,8 @@ export interface Product {
 const ProductsContainer: React.FC<ProductsPage> = ({ title, ingress }) => (
   <div className="container">
     <div className="header">
-      <h1>{title}</h1>
-      <p dangerouslySetInnerHTML={createMarkup(ingress || "")} />
+      <span dangerouslySetInnerHTML={createMarkup(title)} />
+      <span dangerouslySetInnerHTML={createMarkup(ingress)} />
     </div>
     <ProductsCards />
   </div>
@@ -44,10 +44,14 @@ const Products: React.FC = () => {
       </div>
       <div className="products-about">
         <div className="container">
-          <h1>{productsPageData.whatIsAloba?.title}</h1>
-          <p
+          <span
             dangerouslySetInnerHTML={createMarkup(
-              productsPageData.whatIsAloba?.text || ""
+              productsPageData.whatIsAloba?.title
+            )}
+          />
+          <span
+            dangerouslySetInnerHTML={createMarkup(
+              productsPageData.whatIsAloba?.text
             )}
           />
         </div>
