@@ -2,10 +2,11 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import useFetch, { POST_TYPE } from "../../hooks/fetch/useFetch";
 import { Product } from "../../hooks/fetch/fetchTypes";
-import { createMarkup } from "../../utils/utils";
+import { createMarkup, getImageBySize } from "../../utils/utils";
 import { ReactComponent as Spinner } from "../../assets/spinner.svg";
 import "./Product.scss";
 import PageWrapper from "../PageWrapper";
+import useWindowSize from "../../hooks/useWindowSize";
 
 interface RouteParams {
   id: string;
@@ -99,6 +100,7 @@ const Products: React.FC = () => {
     postType: POST_TYPE.PRODUCTS,
     slug: id,
   });
+  const windowSizes = useWindowSize();
 
   if (!complete || !data) return <Spinner />;
 
@@ -107,7 +109,10 @@ const Products: React.FC = () => {
   return (
     <PageWrapper>
       <div className="product">
-        <img src={product?.image} alt="aloba products" />
+        <img
+          src={getImageBySize(product?.image, windowSizes)}
+          alt="aloba products"
+        />
         <div className="container">
           <div className="header">
             <span dangerouslySetInnerHTML={createMarkup(product?.title)} />

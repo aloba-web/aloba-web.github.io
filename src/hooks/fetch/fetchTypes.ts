@@ -1,5 +1,8 @@
-interface ImageUrl {
-  imageUrl: string;
+export interface ImageSizes {
+  xlarge: string;
+  large: string;
+  medium: string;
+  small: string;
 }
 
 interface Coordinates {
@@ -7,8 +10,9 @@ interface Coordinates {
   lng: number;
 }
 
-export interface CarouselItem extends ImageUrl {
+export interface CarouselItem {
   text?: string;
+  image: ImageSizes;
 }
 
 export interface WhatIsAloba {
@@ -25,11 +29,11 @@ export interface AboutUs {
 export interface Home {
   carousel?: Array<CarouselItem>;
   whatIsAloba?: WhatIsAloba;
-  imageDividerFirst?: ImageUrl;
+  imageDividerFirst?: ImageSizes;
   ourProducts?: {
     title?: string;
   };
-  imageDividerSecond?: ImageUrl;
+  imageDividerSecond?: ImageSizes;
   aboutUs?: AboutUs;
 }
 
@@ -53,7 +57,7 @@ export interface RecipesPage {
 export interface Recipe {
   id: string;
   directions: string;
-  image: string;
+  image: ImageSizes;
   ingredients: string;
   ingress: string;
   title: string;
@@ -65,7 +69,7 @@ export interface Contact {
   qna?: {
     title?: string;
     ingress?: string;
-  }
+  };
 }
 
 export interface QnA {
@@ -81,7 +85,7 @@ export interface QnAPage {
 export interface About {
   title?: string;
   text?: string;
-  image?: string;
+  image?: ImageSizes;
 }
 
 export interface ProductsPage {
@@ -94,7 +98,7 @@ export interface ProductsPage {
 }
 
 export interface Product {
-  image: string;
+  image: ImageSizes;
   title: string;
   subtitle: string;
   ingress: string;

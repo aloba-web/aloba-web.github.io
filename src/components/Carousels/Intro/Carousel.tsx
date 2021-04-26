@@ -4,13 +4,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.scss";
 import { CarouselItem } from "../../../hooks/fetch/fetchTypes";
-import { createMarkup } from "../../../utils/utils";
+import { createMarkup, getImageBySize } from "../../../utils/utils";
+import useWindowSize from "../../../hooks/useWindowSize";
 
 export interface CarouselIntroProps {
   carouselItems: Array<CarouselItem>;
 }
 
 const Carousel: React.FC<CarouselIntroProps> = ({ carouselItems }) => {
+  const windowSizes = useWindowSize();
   var settings = {
     autoplay: true,
     arrows: false,
@@ -29,7 +31,10 @@ const Carousel: React.FC<CarouselIntroProps> = ({ carouselItems }) => {
             className="carousel-item"
             style={{
               backgroundPosition: "bottom",
-              backgroundImage: `url(${item.imageUrl})`,
+              backgroundImage: `url(${getImageBySize(
+                item.image,
+                windowSizes
+              )})`,
             }}
           >
             <span

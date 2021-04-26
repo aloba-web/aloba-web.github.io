@@ -83,7 +83,12 @@ const mapQnAPage = (data: any): QnAPage => ({
 const mapAbout = (data: any): About => ({
   title: data.title,
   text: data.text,
-  image: data.image,
+  image: {
+    small: data.image?.sizes?.medium,
+    medium: data.image?.sizes?.medium_large,
+    large: data.image?.sizes?.large,
+    xlarge: data.image?.sizes && data.image?.sizes["2048x2048"],
+  },
 });
 
 const mapProductsPage = (data: any): ProductsPage => ({
@@ -129,7 +134,12 @@ const mapRecipes = (data: any): Array<Recipe> => {
           ingress: recipe.ingress,
           directions: recipe.directions,
           ingredients: recipe.ingredients,
-          image: recipe.image,
+          image: {
+            small: recipe.image?.sizes?.medium,
+            medium: recipe.image?.sizes?.medium_large,
+            large: recipe.image?.sizes?.large,
+            xlarge: recipe.image?.sizes && recipe.image?.sizes["2048x2048"],
+          },
         };
       }
     );
@@ -147,7 +157,12 @@ const mapProducts = (data: any): Array<Product> => {
             title: product.contains.title,
             text: product.contains.text,
           },
-          image: product.image,
+          image: {
+            small: product.image?.sizes?.medium,
+            medium: product.image?.sizes?.medium_large,
+            large: product.image?.sizes?.large,
+            xlarge: product.image?.sizes && product.image?.sizes["2048x2048"],
+          },
           ingress: product.ingress,
           keeping: {
             title: product.keeping.title,
@@ -184,7 +199,12 @@ const mapHome = (data: any): Home => {
     .map(
       (item: any): CarouselItem => ({
         text: item.text,
-        imageUrl: item.image,
+        image: {
+          small: item.image?.sizes?.medium,
+          medium: item.image?.sizes?.medium_large,
+          large: item.image?.sizes?.large,
+          xlarge: item.image?.sizes && item.image?.sizes["2048x2048"],
+        },
       })
     );
 
@@ -196,11 +216,17 @@ const mapHome = (data: any): Home => {
       text: data.whatIsAloba?.text,
     },
     imageDividerFirst: {
-      imageUrl: data.imageDividerFirst?.image,
+      small: data.imageDividerFirst?.image.sizes.medium,
+      medium: data.imageDividerFirst?.image.sizes.medium_large,
+      large: data.imageDividerFirst?.image.sizes.large,
+      xlarge: data.imageDividerFirst?.image.sizes["2048x2048"],
     },
     ourProducts: { title: data.ourProducts?.title },
     imageDividerSecond: {
-      imageUrl: data.imageDividerSecond?.image,
+      small: data.imageDividerSecond?.image.sizes.medium,
+      medium: data.imageDividerSecond?.image.sizes.medium_large,
+      large: data.imageDividerSecond?.image.sizes.large,
+      xlarge: data.imageDividerSecond?.image.sizes["2048x2048"],
     },
     aboutUs: {
       title: data.aboutUs?.title,

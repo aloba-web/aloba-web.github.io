@@ -2,10 +2,11 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import useFetch, { POST_TYPE } from "../../hooks/fetch/useFetch";
 import { Recipe } from "../../hooks/fetch/fetchTypes";
-import { createMarkup } from "../../utils/utils";
+import { createMarkup, getImageBySize } from "../../utils/utils";
 import { ReactComponent as Spinner } from "../../assets/spinner.svg";
 import "./Recipe.scss";
 import PageWrapper from "../PageWrapper";
+import useWindowSize from "../../hooks/useWindowSize";
 
 interface RouteParams {
   id: string;
@@ -26,6 +27,7 @@ const RecipePage: React.FC = () => {
     postType: POST_TYPE.RECIPES,
     slug: id,
   });
+  const windowSizes = useWindowSize();
 
   if (!complete && !data) return <Spinner />;
 
@@ -34,7 +36,11 @@ const RecipePage: React.FC = () => {
   return (
     <PageWrapper>
       <div className="recipe">
-        <img className="image-header" src={image} alt="divider" />
+        <img
+          className="image-header"
+          src={getImageBySize(image, windowSizes)}
+          alt="divider"
+        />
         <div className="content-wrapper container">
           <div>
             <span dangerouslySetInnerHTML={createMarkup(title)} />

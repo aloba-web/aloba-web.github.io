@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 import useFetch, { POST_TYPE } from "../../hooks/fetch/useFetch";
 import PAGE from "../pageNames";
 import { Recipe, RecipesPage } from "../../hooks/fetch/fetchTypes";
-import { createMarkup } from "../../utils/utils";
+import { createMarkup, getImageBySize } from "../../utils/utils";
 import { ReactComponent as Spinner } from "../../assets/spinner.svg";
 import "./Recipes.scss";
 import PageWrapper from "../PageWrapper";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const Recipes: React.FC = () => {
   const { complete, data } = useFetch({ postType: POST_TYPE.RECIPES });
+  const windowSizes = useWindowSize();
 
   if (!complete || !data) return <Spinner />;
 
@@ -20,7 +22,11 @@ const Recipes: React.FC = () => {
     <div className="recipe-cards">
       {recipes.map(({ id, image, title }) => (
         <Link key={id} to={`/recipes/${id}`}>
-          <Card img={image} alt={`recipe-${title}`} title={title} />
+          <Card
+            img={getImageBySize(image, windowSizes)}
+            alt={`recipe-${title}`}
+            title={title}
+          />
         </Link>
       ))}
     </div>
@@ -37,7 +43,7 @@ const RecipesPageComponent: React.FC = () => {
     <PageWrapper>
       <div className="recipes">
         <div className="head">
-        <span dangerouslySetInnerHTML={createMarkup(title)} />
+          <span dangerouslySetInnerHTML={createMarkup(title)} />
           <span dangerouslySetInnerHTML={createMarkup(ingress)} />
         </div>
         <Recipes />

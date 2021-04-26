@@ -6,14 +6,17 @@ import "slick-carousel/slick/slick-theme.css";
 import Card from "../../Card";
 import useFetch, { POST_TYPE } from "../../../hooks/fetch/useFetch";
 import { Recipe } from "../../../hooks/fetch/fetchTypes";
-import { ReactComponent as Spinner} from "../../../assets/spinner.svg";
+import { ReactComponent as Spinner } from "../../../assets/spinner.svg";
 import "./Carousel.scss";
+import useWindowSize from "../../../hooks/useWindowSize";
+import { getImageBySize } from "../../../utils/utils";
 
 const Carousel: React.FC = () => {
   const { complete, data } = useFetch({ postType: POST_TYPE.RECIPES });
+  const windowSizes = useWindowSize();
   let dragging = false;
   const settings = {
-    autoplay: false,
+    autoplay: true,
     arrows: true,
     afterChange: () => (dragging = false),
     beforeChange: () => (dragging = true),
@@ -65,7 +68,7 @@ const Carousel: React.FC = () => {
         >
           <Card
             key={recipe.id}
-            img={recipe.image}
+            img={getImageBySize(recipe.image, windowSizes)}
             alt="food-dish"
             title={recipe.title}
           />

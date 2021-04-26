@@ -10,7 +10,8 @@ import About from "./About";
 import What from "./What";
 import { Home } from "../../hooks/fetch/fetchTypes";
 import PageWrapper from "../PageWrapper";
-import { createMarkup } from "../../utils/utils";
+import { createMarkup, getImageBySize } from "../../utils/utils";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const ProductsContainer: React.FC<{ title: string }> = ({ title }) => (
   <div className="products-home container">
@@ -21,6 +22,7 @@ const ProductsContainer: React.FC<{ title: string }> = ({ title }) => (
 
 const HomePage = () => {
   const { complete, data } = useFetch({ page: PAGE.HOME });
+  const windowSizes = useWindowSize();
 
   if (!data || !complete) {
     return null;
@@ -47,7 +49,7 @@ const HomePage = () => {
         {imageDividerFirst && (
           <img
             className="image-divider"
-            src={imageDividerFirst.imageUrl}
+            src={getImageBySize(imageDividerFirst, windowSizes)}
             alt="divider"
           />
         )}
@@ -55,7 +57,7 @@ const HomePage = () => {
         {imageDividerSecond && (
           <img
             className="image-divider"
-            src={imageDividerSecond.imageUrl}
+            src={getImageBySize(imageDividerSecond, windowSizes)}
             alt="divider"
           />
         )}

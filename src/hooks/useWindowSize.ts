@@ -11,7 +11,7 @@ interface Sizes {
   outerWidth: number;
 }
 
-interface ResponsiveSizes {
+export interface ResponsiveSizes {
   isDesktop: boolean;
   isTablet: boolean;
   isMobile: boolean;
