@@ -28,7 +28,7 @@ const Carousel: React.FC<CarouselIntroProps> = ({ carouselItems }) => {
       {carouselItems.map((item, index) => (
         <div key={index}>
           <div
-            className="carousel-item"
+            className="carousel-item-intro"
             style={{
               backgroundPosition: "bottom",
               backgroundImage: `url(${getImageBySize(

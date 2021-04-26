@@ -63,7 +63,7 @@ const Carousel: React.FC = () => {
       {recipes.map((recipe) => (
         <button
           key={recipe.id}
-          className="carousel-item"
+          className="carousel-item-recipe"
           onClick={() => !dragging && onSlideClick(`/recipes/${recipe.id}`)}
         >
           <Card

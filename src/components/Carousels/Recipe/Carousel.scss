@@ -6,11 +6,17 @@
     border: none;
     cursor: pointer;
     outline: inherit;
-    height: 90%;
   }
 
-  .carousel-item > * {
-    margin: 16px;
+  .carousel-item-recipe {
+    display: flex !important;
+    height: 100%;
+
+    & > * {
+      margin: 16px;
+      height: 90%;
+      width: 100%;
+    }
   }
 
   .slick-prev,
