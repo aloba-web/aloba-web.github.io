@@ -47,7 +47,7 @@ const Footer: React.FC<FooterProps> = () => {
         </div>
         <div className="social-media-attr">
           <span>@alobafoods</span>
-          <span>#aloba</span>
+          <span>#alobafoods</span>
         </div>
       </div>
     </div>
