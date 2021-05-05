@@ -8,57 +8,52 @@
 
 <url>
   <loc>https://www.alobafoods.com/</loc>
-  <lastmod>2021-03-06T10:51:13+00:00</lastmod>
+  <lastmod>2021-05-05T18:51:13+00:00</lastmod>
 </url>
 
 <url>
-  <loc>https://www.alobafoods.com/?/</loc>
-  <lastmod>2021-03-06T10:51:13+00:00</lastmod>
+  <loc>https://www.alobafoods.com/about</loc>
+  <lastmod>2021-05-05T18:51:13+00:00</lastmod>
 </url>
 
 <url>
-  <loc>https://www.alobafoods.com/?/about</loc>
-  <lastmod>2021-03-06T10:51:13+00:00</lastmod>
+  <loc>https://www.alobafoods.com/products</loc>
+  <lastmod>2021-05-05T18:51:13+00:00</lastmod>
 </url>
 
 <url>
-  <loc>https://www.alobafoods.com/?/products</loc>
-  <lastmod>2021-03-06T10:51:13+00:00</lastmod>
+  <loc>https://www.alobafoods.com/products/burgare</loc>
+  <lastmod>2021-05-05T18:51:13+00:00</lastmod>
 </url>
 
 <url>
-  <loc>https://www.alobafoods.com/?/products/burgare</loc>
-  <lastmod>2021-03-06T10:51:13+00:00</lastmod>
+  <loc>https://www.alobafoods.com/products/fars</loc>
+  <lastmod>2021-05-05T18:51:13+00:00</lastmod>
 </url>
 
 <url>
-  <loc>https://www.alobafoods.com/?/products/fars</loc>
-  <lastmod>2021-03-06T10:51:13+00:00</lastmod>
+  <loc>https://www.alobafoods.com/contact</loc>
+  <lastmod>2021-05-05T18:51:13+00:00</lastmod>
 </url>
 
 <url>
-  <loc>https://www.alobafoods.com/?/contact</loc>
-  <lastmod>2021-03-06T10:51:13+00:00</lastmod>
+  <loc>https://www.alobafoods.com/stores</loc>
+  <lastmod>2021-05-05T18:51:13+00:00</lastmod>
 </url>
 
 <url>
-  <loc>https://www.alobafoods.com/?/stores</loc>
-  <lastmod>2021-03-06T10:51:13+00:00</lastmod>
+  <loc>https://www.alobafoods.com/faq</loc>
+  <lastmod>2021-05-05T18:51:13+00:00</lastmod>
 </url>
 
 <url>
-  <loc>https://www.alobafoods.com/?/faq</loc>
-  <lastmod>2021-03-06T10:51:13+00:00</lastmod>
+  <loc>https://www.alobafoods.com/recipes</loc>
+  <lastmod>2021-05-05T18:51:13+00:00</lastmod>
 </url>
 
 <url>
-  <loc>https://www.alobafoods.com/?/recipes</loc>
-  <lastmod>2021-03-06T10:51:13+00:00</lastmod>
-</url>
-
-<url>
-  <loc>https://www.alobafoods.com/?/recipes/*</loc>
-  <lastmod>2021-03-06T10:51:13+00:00</lastmod>
+  <loc>https://www.alobafoods.com/recipes/*</loc>
+  <lastmod>2021-05-05T18:51:13+00:00</lastmod>
 </url>
 
 </urlset>
