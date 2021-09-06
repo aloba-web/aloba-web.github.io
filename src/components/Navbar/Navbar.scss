@@ -2,7 +2,7 @@
 
 .navbar {
   align-items: center;
-  background-color: rgba($color: $classic-blue, $alpha: 0.85);
+  background-color: $classic-blue;
   box-sizing: border-box;
   display: flex;
   height: $navbar-height;
